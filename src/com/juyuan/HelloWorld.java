@@ -16,13 +16,9 @@ public class HelloWorld extends HttpServlet {
         System.out.println("有问题 ");
 
        System.out.println("添加的");
-
-       
-        
-        
+       System.out.println("合并代码了。。。");
 
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("222222");
