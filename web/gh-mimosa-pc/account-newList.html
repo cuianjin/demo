@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="modern">
+
+	<head>
+		<title>新闻动态列表页-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="static/css/other.css" />
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+	    <![endif]-->
+			<!--[if lte IE 8]>
+	        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+		<!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<!--<script src="static/js/public/bootstrap.min.js"></script>-->
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/account-newList.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-myIncome" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="newlist_box">
+				<div class="gh_main gh_clearfix">
+					<!-- menu-->
+					<div class="gh_sidebar">
+						<!--user menu-->
+						<div class="gh_sidebar_nav" id="tab_nav">
+							<!--<a data-type="null" class="tab_nav active" href="javascript:void(0)">全部资讯</a>
+							<a data-type="资讯信息" class="tab_nav" href="javascript:void(0)">资讯信息</a>
+							<a data-type="公司动态" class="tab_nav" href="javascript:void(0)">公司动态</a>-->
+						</div>
+					</div>
+						<div id="profitUsrCont" class="gh_sidecon">
+							<div class="gh_con" id="newTabs">
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="newlist_content_box gh_none" id="new-detail">
+				<div class="news-title gh_clearfix">
+					<div class="gh_f20 gh_c3 gh_tcenter gh_none" id="new-title"></div>
+					<!--<hr/>-->
+					<p class="gh_c9 gh_f12 mt10 gh_none" id="new-pushtime"></p>
+					<!--<span class="newlist_back">返回</span>-->
+					<a href="javascript:;" class="gh_btn gh_btn_blue gh_btn_sm gh_btn_outline gh_fr" data-dismiss="modal" id="newlist-back-button">返回</a>
+				</div>
+				<div class="gh_news_content gh_mt20" id="new-content">
+				</div>
+			</div>
+		</div>
+		</div>
+		<script id="newList-template" class="mustache-template" type="text/template">
+			{{#rows}}
+			<li class="new-li">
+				<div class="new-img">
+					<img src="{{thumbnailUrl}}" alt="" />
+				</div>
+				<div class="new-text-md">
+					<div class="new-title">{{title}}</div>
+					<div class="new-summary">{{summary}}</div>
+					<a href="javascript:;" class="gh_cmain gh_f12 gh_fl gh_mt10 new-detail" data-title="{{title}}" data-content="{{content}}" data-time="{{publishTime}}" data-linkUrl="{{url}}">查看详情</a>
+				</div>
+				<div class="new-text-rr">
+					<p class="gh_f12 gh_c9">{{publishTime}}</p>
+				</div>
+			</li>
+			{{/rows}}
+		</script>
+		<script id="newList-tab" class="mustache-template" type="text/template">
+			{{#typeTab}}
+			<div class="tab_content_box none">
+				<ul class="clearfix mynoticetable messagetable" id="type_{{tabIndex}}">
+				</ul>
+				<div class="tcdPageCode page_{{tabIndex}}" style="display: block; padding: 15px 0px; margin-top:0px ;"></div>
+				<div class="gh_noDataTips none" id="noReCord_{{tabIndex}}" style="display: none;">
+					<img src="static/images/app-nodata1.png" alt="国槐科技">
+					<p class="gh_norecord">暂无记录</p>
+				</div>
+			</div>
+			{{/typeTab}}
+		</script>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<!--内容弹窗-->
+		<div class="gh_modal fade" id="content_box" tabindex="-1" role="dialog" style="display: none;">
+			<div class="gh_modal_dialog gh_modal_lg" style="margin: 65px auto 0px;">
+				<div class="gh_modal_content" id="modalContent">
+					<div class="gh_modal_header newlist">
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+						<div class="notice-nr gh_mt20">
+							<h4 class="gh_modal_title" id="modalTitle">公告：二货借款客服电话（400-8738-677）暂停人工服务通知</h4>
+							<p class="gh_c9 ghf12 ghmt10">发布于 2016/05/10 10:00</p>
+							<hr />
+						</div>
+					</div>
+					<div class="gh_modal_body newlist gh_row" id="modalBody">
+						<div class="gh_col_6" id="newlist_img"><img src="static/images/mayun.png" alt="" /></div>`
+						<div class="gh_col_6" id="modalBodyDiv"></div>
+					</div>
+					<div class="gh_modal_footer">
+						<a href="javascript:;" class="gh_btn gh_btn_blue gh_btn_sm gh_btn_outline" data-dismiss="modal">返回</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>风险测评-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHrisk.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account-risktesting.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="inviteRisktesting"></div>
+				</div>
+				<!--定期-content-->
+				<div class="gh_sidecon gh_con">
+					<div class="gh_f18 gh_c2"><b>风险测评</b></div>
+					<div class="account_risktesting_top">
+						<p>请完成风险测评，以便于我们了解您的风险承受能力并为您提供更好的投资服务和建议</p>
+					</div>
+					<div class="gh_mt20">
+						<div class="">
+						
+							<div class="risktesting_result gh_pt40">
+								<div class="riskLevelImg gh_icons"></div>
+								<p>个人用户风险承受能力测评</p>
+								<h2 class="riskLevelTxt">--</h2>
+							</div>
+							<div class="gh_tcenter gh_mt40 notRiskAssessment gh_none">如果您的投资偏好为“保守型”，请点击“我知道了”，自动完成测评。</div>
+							<div class="gh_tcenter gh_mt40 isRiskAssessment_level isRiskAssessment_R1 gh_none">
+								根据测评结果，您对市场可能的风险持谨慎的态度，注重本金的安全性，对收益率期望不高；投资主动性较低，适合固定收益类投资工具。
+							</div>
+							<div class="gh_tcenter gh_mt40 isRiskAssessment_level isRiskAssessment_R2 gh_none">
+								根据测评结果，您对市场可能的风险有一定的认识，可以承担一定中低类风险，在本金安全的基础上，期望资产获得一定的增长，适合投资于兼顾保本及温和升值能力的投资工具。
+							</div>
+							<div class="gh_tcenter gh_mt40 isRiskAssessment_level  isRiskAssessment_R3 gh_none">
+								根据测评结果，您对市场的风险有较强的认识，可以承担中等程度的风险，期望投资获得稳定的增长，对市场波动有一定认识；投资较为主动，适合投资于具备较强升值能力的投资工具。
+							</div>
+							<div class="gh_tcenter gh_mt400 isRiskAssessment_level isRiskAssessment_R4 gh_none">
+								根据测评结果，您对市场风险有较深的认识，可以承担中高程度的风险，期望投资获得长期的成长，对中长期波动有较好的理解；投资积极主动，适合投资于具备良好升值能力的投资工具。
+							</div>
+							<div class="gh_tcenter gh_mt40 isRiskAssessment_level isRiskAssessment_R5 gh_none">
+								根据测评结果，您对市场风险有自己独到的认识，敢于承担高级别的风险，对短期波动不敏感，期望在市场变化中获得较高回报，投资以中长期为主。
+							</div>
+							
+							
+							<!--<div class="row mt55 pb40 notRiskAssessment none">
+								<div class="col-xs-6">
+									<div class="pc_botton_def">
+										<a href="javascript:;" class="fl_r" style="width: 208px;" id="sure">我知道了</a>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="pc_modal_botton">
+										<a href="javascript:;" class="f_f f_left toRiskTest" style="width: 208px;">开始测评</a>
+									</div>
+								</div>
+							</div>-->
+							
+							<div class="pb40 gh_tcenter">
+								<div class="gh_btn gh_btn_md gh_btn_blue toRiskTest">重新测评</div>
+							</div>
+							
+						</div>
+  					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<div template-href='riskTest' template-noResult="true"></div>
+		<div class="gh_modal"></div>
+	</body>
+</html>

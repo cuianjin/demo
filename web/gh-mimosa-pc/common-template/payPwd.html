@@ -1,0 +1,365 @@
+<!-- Modal 设置交易密码-->
+<div class="gh_modal account_setting" id="setBankPwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_md fromModel">
+		<div class="gh_modal_content">
+			<div class="modalBox gh_none" id="setPayPwdBox">
+				<div class="gh_modal_header gh_tcenter">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					<p class="gh_f16 gh_c2 gh_mb15" id=""><b>设置交易密码</b></p>
+					<p class="gh_c4 gh_f14 ">建议您定期更改密码以保护账户安全</p>
+				</div>
+				<div class="gh_modal_body gh_tcenter">
+					<div class="gh_row">
+						<div class="gh_col_4 gh_tright gh_lh50">
+							<span class="gh_pr10">交易密码</span>
+						</div>
+						<div class="gh_col_8 gh_lh50 gh_pr">
+							<input id="bank_pay_pwd1" class="gh_input_safenum" type="password" valid='{"required":true,"tipsbox":"#pay_pwd_tips2", "msg":"提示：交易密码","payPassWord":true}'  maxlength="6" autocomplete="off" />
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>							
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_4 gh_tright gh_lh50">
+							<span class="gh_pr10">确认密码</span>
+						</div>
+						<div class="gh_col_8 gh_lh50 gh_pr">
+							<input id="bank_pay_pwd2" class="gh_input_safenum" type="password" valid='{"required":true,"tipsbox":"#pay_pwd_tips2", "msg":"提示：确认密码","payPassWord":true,"equals":"bank_pay_pwd1","equalsMsg":"交易密码"}' maxlength="6" autocomplete="off" />
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row">
+						<div class="gh_col_4">&nbsp;</div>
+						<div class="gh_col_8">
+							<p class="gh_ml15 gh_tleft form_tips_box gh_cf0 gh_f12 gh_mt10" id="pay_pwd_tips2">&nbsp;</p>
+						</div>
+					</div>
+					<div class="gh_row gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn" id="setPayPwd2">确定</button>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox gh_none" id="setPayPwdSucced">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				</div>
+				<div class="gh_modal_body">
+					<div class="gh_row gh_tcenter">
+						<div class="account_pwdresult gh_icon_success gh_icons">
+						</div>
+						<div class="gh_f20 gh_mt40">设置交易密码成功</div>
+					</div>
+					<div class="gh_row gh_mt20 gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn gh_modal_cancel" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox gh_none" id="setPayPwdFaild">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				</div>
+				<div class="gh_modal_body">
+					<div class="gh_row gh_tcenter">
+						<div class="account_pwdresult gh_icon_error gh_icons">
+							
+						</div>
+						<div class="gh_f20 gh_mt40">设置交易密码失败</div>
+					</div>
+					<div class="gh_row gh_mt20 gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn gh_modal_cancel" data-dismiss="modal">确定</button>
+					</div>
+					<!--<h5 id="pay_pwd_tips2" style="color: red;padding-left: 52px;">提示：设置交易密码失败！</h5>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal 修改交易密码-->
+<div class="gh_modal fade" id="modifyPaypwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_md fromModel">
+		<div class="gh_modal_content">
+			<div class="modalBox gh_none" id="changePayPwdBox">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					<p class="gh_modal_title" id=""><b>修改交易密码</b></p>
+				</div>
+				<div class="gh_modal_body gh_tcenter">
+					<div class="gh_row">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">交易密码：</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr">
+							<input id="oldPayPassword" class="gh_input_safenum" type="password" valid='{"required":true,"tipsbox":"#modify_pay_tips", "msg":"提示：交易密码","payPassWord":true}' data-trigger="#modify_pay_pwd" maxlength="6" autocomplete="off"/>
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">新密码：</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr">
+							<input id="newPayPassword" class="gh_input_safenum" type="password" valid='{"required":true,"tipsbox":"#modify_pay_tips", "msg":"提示：新密码","payPassWord":true}' data-trigger="#modify_pay_pwd" maxlength="6"    autocomplete="off"/>
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">确认密码：</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr">
+							<input id="newPayPasswordConfrim" class="gh_input_safenum" type="password" valid='{"required":true,"tipsbox":"#modify_pay_tips", "msg":"提示：确认密码","payPassWord":true,"equals":"newPayPassword","equalsMsg":"新密码"}' data-trigger="#modify_pay_pwd" maxlength="6"    autocomplete="off"/>
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row">
+						<div class="gh_col_3">&nbsp;</div>
+						<div class="gh_col_9">
+							<p class="gh_ml15 gh_tleft form_tips_box gh_cf0 gh_f12 gh_mt10 gh_mb10" id="modify_pay_tips">&nbsp;</p>
+						</div>
+					</div>
+					<div class="gh_row gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn" id="modify_pay_pwd">确定</button>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox gh_none" id="changeBankPwdSucced">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				</div>
+				<div class="gh_modal_body">
+					<div class="gh_row gh_tcenter">
+						<div class="account_pwdresult gh_icon_success">
+						</div>
+						<div class="gh_f20 gh_mt40">交易密码修改成功</div>
+					</div>
+					<div class="gh_row gh_mt20 gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn gh_modal_cancel" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox gh_none" id="changeBankPwdFaild">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				</div>
+				<div class="gh_modal_body">
+					<div class="gh_row gh_tcenter">
+						<div class="account_pwdresult gh_icon_error">
+						</div>
+						<div class="gh_f20 gh_mt40">交易密码修改失败</div>
+					</div>
+					<div class="gh_row gh_mt20 gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn gh_modal_cancel" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal 忘记交易密码-->
+<div class="gh_modal fade" id="fogetPaypwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_md fromModel">
+		<div class="gh_modal_content">
+			<div class="modalBox gh_none" id="forgetPaypwdBox">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					<p class="gh_modal_title"><b>重置交易密码</b></p>
+					<p class="gh_c4 gh_f14 gh_mt20 gh_tcenter">资金转入和转出时使用，以保障资金安全</p>
+				</div>
+				<div class="gh_modal_body gh_tcenter">
+					<div class="gh_row">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">银行预留手机号</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr gh_tleft">
+							<input id="foget_phoneNum_input" type="text" class="paypwd_mobile" triggerId="#modify_pay_pwd" maxlength="11" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">短信验证码</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr gh_verifyCode_group">
+							<input id="foget_verifyCodeNo" type="text" class="paypwd_vcode" autocomplete="off" placeholder="" valid='{"required":true,"tipsbox":"#forget_pay_tips","msg":"提示：短信验证码","positiveInteger":true,"finalLength":6}' triggerId="#modify_pay_pwd" maxlength="6"    autocomplete="off"/>
+							<button id="foget_vericode_btn" class="paypwd_vbtn">获取验证码</button>
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">交易密码</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr">
+							<input id="newPayPassWord" type="password" class="gh_input_safenum" autocomplete="off" placeholder="" valid='{"required":true,"tipsbox":"#forget_pay_tips", "msg":"提示：交易密码","payPassWord":true}' triggerId="#modify_pay_pwd" maxlength="6"   />
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 gh_tright gh_lh50">
+							<span class="gh_pr10">确认密码</span>
+						</div>
+						<div class="gh_col_9 gh_lh50 gh_pr">
+							<input id="newPayPassWorda" type="password" class="gh_input_safenum" autocomplete="off" placeholder="" valid='{"required":true,"tipsbox":"#forget_pay_tips", "msg":"提示：确认密码","payPassWord":true,"equals":"newPayPassWord","equalsMsg":"新交易密码"}' triggerId="#modify_pay_pwd" maxlength="6"    autocomplete="off"/>
+							<ul class="paypwd_pwd_box gh_ml15">
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+								<li>
+									<div></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="gh_row">
+						<div class="gh_col_3">&nbsp;</div>
+						<div class="gh_col_9">
+							<p class="gh_ml15 gh_tleft form_tips_box gh_cf0 gh_f12 gh_mt10 gh_mb10" id="forget_pay_tips">&nbsp;</p>
+						</div>
+					</div>
+					<div class="gh_row gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn" id="forget_pay_pwd">确认</button>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox gh_none" id="forgetBankPwdSucced">
+				<div class="gh_modal_header">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				</div>
+				<div class="gh_modal_body">
+					<div class="gh_row gh_tcenter">
+						<div class="account_pwdresult gh_icon_success gh_icons"></div>
+						<div class="gh_f20 gh_mt40">重置交易密码成功</div>
+					</div>
+					<div class="gh_row gh_mt20 gh_tcenter">
+						<button class="gh_btn gh_btn_md gh_btn_blue account_pwdbtn gh_modal_cancel" data-dismiss="modal">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

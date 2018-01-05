@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>我的定期-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account-mytn.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-myt0" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="tnUsr"></div>
+				</div>
+				<!--定期-content-->
+				<div class="gh_sidecon gh_con">
+					<!--top-->
+					<div class="gh_row">
+
+						<div class="gh_col_12 accout-right-top">
+							<p>
+								<span id="tnCapitalAmount" class="gh_f30 gh_corg" data-amount="***">--</span>
+								<span class="account_icon gh_icon_eyes gh_ml10" id="seeAmount"></span></p>
+							<p class="gh_fc6 gh_mt5">我的定期(元) </p>
+						</div>
+					</div>
+					<div class="gh_row gh_mt15 account_view_text">
+						<div class="gh_col_3">
+							<p id="tnYesterdayIncome" data-amount="***">--</p>
+							昨日收益(元)
+						</div>
+						<div class="gh_col_3">
+							<p id="totalIncomeAmount" data-amount="***">--</p>
+							累计收益(元)
+						</div>
+						
+					</div>
+					<!--middle-->
+					<div class="gh_tabs gh_mt40">
+
+						<ul class="gh_tabs_nav" role="tablist">
+							<li role="presentation" class="active" data-pane="#hold">
+								<a href="javascript:;" role="tab" id="holdNum">持有中(--)</a>
+							</li>
+							<li role="presentation" data-pane="#toConfirm">
+								<a href="javascript:;" role="tab" id="toConfirmNum">申请中(--)</a>
+							</li>
+							<li role="presentation" data-pane="#closed">
+								<a href="javascript:;" role="tab" id="closedNum">已结清(--)</a>
+							</li>
+						</ul>
+						<div class="gh_tabs_con">
+							<div class="gh_tabs_pane active" role='tabpanel' id="hold">
+								<ul class="account_plist" id="holdingTn"></ul>
+								<div class="gh_noDataTips gh_none" id="holdTn-noReCord">
+									<div class="gh_noDataTips_activity gh_icons"></div>
+									<p class="gh_norecord">暂无记录~</p>
+								</div>
+							</div>
+							<div class="gh_tabs_pane" role='tabpanel' id="toConfirm">
+								<ul class="account_plist"  id="toConfirmTn"></ul>
+								<div class="gh_noDataTips gh_none" id="toConfirmTn-noReCord">
+									<div class="gh_noDataTips_activity gh_icons"></div>
+									<p class="gh_norecord">暂无记录~</p>
+								</div>
+							</div>
+							<div class="gh_tabs_pane" role='tabpanel' id="closed">
+								<ul class="account_plist" id="closedTn"></ul>
+								<div class="gh_noDataTips gh_none" id="closedTn-noReCord">
+									<div class="gh_noDataTips_activity gh_icons"></div>
+									<p class="gh_norecord">暂无记录~</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!--定期详情Modal-->
+		<div class="gh_modal" id="mytn-detail" tabindex="-1" role="dialog" data-backdrop="static">
+			<div class="gh_modal_dialog" style=" width: 828px; margin-top: 100px;">
+				<div class="gh_modal_content">
+					<div class="gh_modal_header">
+						<div class="gh_modal_title"><b>记录明细</b></div>
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					</div>
+					<div class="gh_modal_body">
+						<table class="gh_table" id="mytn-detail-table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>订单编号</th>
+									<th>交易日期</th>
+									<th>类型</th>
+									<th>金额(元)</th>
+									<th>交易状态</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+						<div class="gh_tcdPageCode gh_pt15 gh_pb15" id="tradeTablePage"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 持有中 -->
+		<script id="holdingTn-template" class="mustache-template" type="text/template">
+			{{#products}}
+				<li class="account_plist_view">
+					<p class="gh_fw700">{{productName}}
+						{{#repaying}}<span class="gh_tag_general gh_icon_tag gh_ml10">{{statusDisp}}</span>{{/repaying}}
+					</p>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="gh_w20p" width="20%">
+								<p>{{investAmount}}</p>
+								{{#repaying}}本息总金额(元){{/repaying}}
+								{{^repaying}}投资金额(元){{/repaying}}
+							</td>
+							<td class="gh_w20p"><p>{{matureDate}}</p>理财到期日</td>
+							<td class="gh_w20p"><p>{{expYearRate}}</p>预期年化收益率</td>
+							<td class="gh_w20p"><p>到期还本付息</p>收益方式</td>
+							<td class="account_btn_link">
+							{{^repaying}}
+								<a href="javascript:;" data-oid="{{productOid}}" class="mngInfo">记录明细</a>
+							{{/repaying}}
+							</td>
+						</tr>
+					</table>
+				</li>
+			{{/products}}
+		</script>
+		<!---->
+		<!-- 申请中 -->
+		<script id="toConfirmTn-template" class="mustache-template" type="text/template">
+			{{#products}}
+				<li class="account_plist_view">
+					<p class="gh_fw700">{{productName}}
+						{{#refunding}}<span class="gh_tag_general gh_icon_tag">{{statusDisp}}</span>{{/refunding}}
+					</p>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							{{^refunding}}
+								<td class="gh_w25p">
+									<p>{{acceptedAmount}}</p>
+									已确认金额(元)
+								</td>
+								<td class="gh_w25p"><p>{{toConfirmInvestAmount}}</p>已受理金额(元)</td>
+								<td class="gh_w25p  gh_pr15"><p>{{setupDate}}</p>产品预计成立日</td>
+								<td class="gh_w25p"><p>{{statusDisp}}</p>申请状态</td>
+							{{/refunding}}
+							{{#refunding}}
+								<td class="gh_w33p"><p>{{refundAmount}}</p>本息退款(元)</td>
+								<td class="gh_w33p"><p>{{statusDisp}}</p>申请状态</td>
+								<td class="gh_w33p gh_pr15"><p>{{refundDate}}</p>预计到账日期</td>
+							{{/refunding}}
+						</tr>
+					</table>
+				</li>
+			{{/products}}
+		</script>
+		
+		
+		<!-- 已结清 -->
+		<script id="closedTn-template" class="mustache-template" type="text/template">
+			{{#products}}
+				<li class="account_plist_view">
+					<p class="gh_fw700">{{productName}}</p>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="gh_pr15"><p>{{orderAmount}}</p>本息金额(元)</td>
+							{{#closed}}<td class="gh_center gh_pr15"><p>{{repayDate}}</p>还本付息日</td></div>{{/closed}}
+							{{#refunded}}<td class="gh_center gh_pr15"><p>{{refundDate}}</p>退款日</td>{{/refunded}}
+							{{#closed}}<td class="gh_center gh_pr15"><p>{{setupDate}}</p>理财到期日</td>{{/closed}}
+						</tr>
+					</table>
+				</li>
+			{{/products}}
+		</script>
+		
+		
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>

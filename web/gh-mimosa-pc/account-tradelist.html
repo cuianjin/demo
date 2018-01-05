@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>交易记录-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="static/css/plugins/bootstrap-datetimepicker.css">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<!--<script src="static/js/public/bootstrap.min.js"></script>-->
+		<script src="static/js/public/moment/moment.min.js"></script>
+		<script src="static/js/public/moment/locale/zh-cn.js"></script>
+		<script src="static/js/public/bootstrap-datetimepicker.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account-tradelist.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-tradelist" class="account login_tip">
+		<div template-href='header' data-navname="" id=""></div>
+		
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="tradeUsr"></div>
+				</div>
+				<!--定期-content-->
+				<div class="gh_sidecon gh_con">
+					<div class="gh_f18 gh_c2"><b>订单记录</b></div>
+					<div class="gh_mt40 gh_tabs">
+						<ul id="myTab" class="gh_tabs_nav" role="tablist">
+							<li class="active " role="presentation" data-pane="#recoderTrade">
+								<a href="javascript:;" role="tab">交易记录</a>
+							</li>
+							<li class="" style="margin-left:1px;"  role="presentation" data-pane="#chargeTrade">
+								<a href="javascript:;" role="tab">充提记录</a>
+							</li>
+						</ul>
+						<div id="myTabContent" class="gh_tabs_con">
+							<div class="gh_tabs_pane active" role="tabpanel" id="recoderTrade">
+								<div class="gh_filter_box gh_mt25 gh_f12">
+									<dl class="gh_filter_view gh_clearfix">
+										<dt>产品筛选</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix" id="productType">
+												<li class="gh_rline"><a href="javascript:;" data-proType="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-proType="PRODUCTTYPE_02">活期</a></li>
+												<li><a href="javascript:;" data-proType="PRODUCTTYPE_01">定期</a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl class="gh_filter_view gh_clearfix">
+										<dt>交易类型</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix" id="tradeOrderType">
+												<li class="gh_rline"><a href="javascript:;" data-tradeType="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-tradeType="invest,expGoldInvest">申购</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-tradeType="normalRedeem,clearRedeem,expGoldRedeem">赎回</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-tradeType="cash">还本/付息</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-tradeType="cashFailed">退款</a></li>
+												<li><a href="javascript:;" data-tradeType="dividend">现金分红</a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl class="gh_filter_view gh_clearfix">
+										<dt>交易时间</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix" id="durations">
+												<li class="gh_rline"><a href="javascript:;" data-date="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="1">一个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="3">三个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="12">一年内</a></li>
+												<li class="">
+													<div class="gh_filter_term_date">
+														<label class="gh_fl gh_ml40">日期</label>
+														<input type='text' class="form-control form_datetime startTime " size="16" id="sDate" autocomplete="off" /><span class="account_dateline">—</span><input type='text' class="form-control form_datetime endTime" size="16" id="eDate" autocomplete="off" />
+														<!--<button class="btn btn-default ml15  pull-left myt0">查询</button>-->
+													</div>
+												</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="gh_pb5">
+									<table class="gh_table" id="tradeTable">
+										<thead>
+											<tr>
+												<th class="gh_tleft">产品名称</th>
+												<th class="gh_tcenter">类型</th>
+												<th class="gh_tcenter">金额(元)</th>
+												<th class="gh_tcenter">交易状态</th>
+												<th class="gh_tcenter">创建时间</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<div class="gh_tcdPageCode gh_mt10" id="tradeTablePage"></div>
+									<div class="gh_noDataTips gh_none" id="tradeTable-noReCord">
+										<div class="gh_noDataTips_activity gh_icons"></div>
+										<p class="gh_norecord">暂无记录~</p>
+									</div>
+								</div>
+
+							</div>
+							<div class="gh_tabs_pane" role="tabpanel" id="chargeTrade">
+								<div class="gh_filter_box gh_mt25 gh_f12">
+									<dl class="gh_filter_view gh_clearfix">
+										<dt>交易类型</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix" id="chargeType">
+												<li class="gh_rline"><a href="javascript:;" data-orderType="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-orderType="deposit">充值</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-orderType="withdraw">提现</a></li>
+												<li><a href="javascript:;" data-tradeType="redEnvelope">现金红包</a></li>
+											</ul>
+										</dd>
+									</dl>
+									<dl class="gh_filter_view gh_clearfix">
+										<dt>交易时间</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix" id="durations">
+												<li class="gh_rline"><a href="javascript:;" data-date="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="1">一个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="3">三个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="12">一年内</a></li>
+												<li class="">
+													<div class="gh_filter_term_date input-group date">
+														<label class="gh_fl gh_ml40">日期</label>
+														<input type='text' class="form-control form_datetime startTime " size="16" id="sDate" autocomplete="off" /><span class="account_dateline">—</span><input type='text' class="form-control form_datetime endTime" size="16" id="eDate" autocomplete="off" />
+														<!--<button class="btn btn-default ml15  pull-left myt0">查询</button>-->
+													</div>
+												</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="gh_pb20">
+									<table class="gh_table" id="depositTable">
+										<thead>
+											<tr>
+												<th class="gh_tleft">交易类型</th>
+												<th class="gh_tcenter">交易金额(元)</th>
+												<th class="gh_tcenter">手续费(元)</th>
+												<th class="gh_tcenter">交易状态</th>
+												<th class="gh_tcenter">创建时间</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<div class="gh_tcdPageCode gh_mt20" id="depositTablePage"></div>
+									<div class="gh_noDataTips gh_none" id="depositTable-noRecord">
+										<div class="gh_noDataTips_activity gh_icons"></div>
+										<p class="gh_norecord">暂无记录~</p>
+									</div>
+								</div>
+							</div>
+						</div>
+  					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>

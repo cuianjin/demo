@@ -1,0 +1,65 @@
+<!-- Modal -->
+<div class="gh_modal gh_fade" id="popup-box-bg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="gh_modal_dialog calculator gh_modal_lg">
+		<!--calculator-->
+		<div class="gh_modal_content">
+			<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+			<ul class="gh_tabs_nav gh_clearfix" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#current" role="tab" data-toggle="tab">收益计算器</a>
+				</li>
+			</ul>
+			<div class="gh_modal_body gh_tabs_con" id="calculateContainer">
+				<div role="tabpanel" class="gh_tabs_pane active" id="current">
+					<div class="gh_row gh_mt25 gh_pr">
+						<div class="gh_col_6">
+							<div class="gh_col_3 gh_tright">投资金额</div>
+							<div class="gh_col_9 gh_pr">
+								<input type="text" placeholder="" id="money" class="input_border" maxlength="9" valid='{"required":true,"tipsbox":"#t0-calculate-errorMessaage","msg":"提示： 投资金额","floatNum":true}'/>	
+								<span class="right_bit">元</span>
+							</div>
+						</div>
+						<div class="gh_col_6">
+							<div class="gh_col_3 gh_tright">投资时长</div>
+							<div class="gh_col_9 gh_pr">
+								<input type="text" placeholder="" id="invertMonth" class="input_border"  maxlength="4" valid='{"required":true,"tipsbox":"#t0-calculate-errorMessaage","msg":"提示： 投资时长","positiveInteger":true}'/>	
+								<span class="right_bit">天</span>
+							</div>
+						</div>
+					</div>
+					<div class="gh_row gh_mt25 gh_pr">
+						<div class="gh_col_6 ">
+							<div class="gh_col_3 gh_tright">预期年化收益</div>
+							<div class="gh_col_9 gh_pr">
+								<input type="text" placeholder="" id="preIncome" class="input_border" maxlength="4" valid='{"required":true,"tipsbox":"#t0-calculate-errorMessaage","msg":"提示： 预期年化","floatNum":true}'/>	
+								<span class="right_bit">%</span>
+							</div>
+						</div>
+						<div class="gh_col_6 gh_tright">
+							<span class="gh_btn gh_btn_blue calculate-count-btn gh_mr5" id="current-count">计算</span>
+							<span class="gh_btn  calculate-reset-btn">重置</span>
+						</div>
+					</div>
+					<p id="t0-calculate-errorMessaage" class="errorMsg gh_crate"></p>
+					<div class="gh_modal_footer gh_tleft gh_mt40">
+						<div class="gh_row">
+							<div class="gh_col_12 gh_tleft">
+								<span class="gh_f16 gh_fw700 gh_mb10">计算结果:</span><span class="gh_c9 gh_f12 gh_ml15">（此计算器的计算结果仅供参考，实际收益以最终投资结果为准。）</span>
+								<div class="gh_col_12 gh_mt25 gh_ml55" id=""><!--countResult-->
+									<div class="total_profit">
+										<p class="gh_crate gh_f20" id="totalProfit">0.00</p>
+										<p>预期收益(元)</p>
+									</div>
+									<div class="gh_fl gh_tleft total_money">
+										<p class="gh_crate gh_f20" id="totalMoney">0.00</p>
+										<p>本息合计(元)</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

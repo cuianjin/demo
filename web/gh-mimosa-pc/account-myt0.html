@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>我的活期-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    	<![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHrisk.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account-myt0.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-myt0" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="t0Usr"></div>
+				</div>
+				<!--活期-content-->
+				<div class="gh_sidecon gh_con">
+					<div class="gh_row">
+						<!--top-->
+						<div class="gh_col_12">
+							<p>
+								<span id="t0CapitalAmount" class="gh_f30 gh_corg" data-amount="***">--</span>
+								<span class="account_icon gh_icon_eyes gh_ml10" id="seeAmount"></span>
+							</p>
+							<p class="gh_fc6 gh_mt5">我的活期(元) </p>
+						</div>
+					</div>
+					<div class="gh_row gh_mt15 account_view_text">
+						<div class="gh_col_3">
+							<p id="t0YesterdayIncome" data-amount="***">--</p>
+							昨日收益(元)
+						</div>
+						<div class="gh_col_3">
+							<p id="totalIncomeAmount" data-amount="***">--</p>
+							累计收益(元)
+						</div>
+					</div>
+					<div class="gh_mt40 gh_tabs" id="hasT0">
+						<ul id="myTab" class="gh_tabs_nav" role="tablist">
+							<li class="active" role="presentation" data-pane="#t0Income">
+								<a href="javascript:;" role="tab">持有中(<span id="holdingNum">--</span>)</a>
+							</li>
+							<li role="presentation" data-pane="#t0Apply">
+								<a href="javascript:;" role="tab">申请中(<span id="applyingNum">--</span>)</a>
+							</li>
+						</ul>
+						<div id="myTabContent" class="gh_tabs_con">
+							<div class="gh_tabs_pane active"  role="tabpanel" id="t0Income">
+								<ul class="account_plist" id="holdingDetails"></ul>
+								<div class="gh_noDataTips gh_none" id="incomeTable-noReCord">
+									<div class="gh_noDataTips_activity gh_icons"></div>
+									<p class="gh_norecord">暂无记录~</p>
+								</div>
+								<div class="gh_tcdPageCode" id="incomeTablePage" style="display: block; padding: 15px 0px; margin-top:0px ;"></div>
+							</div>
+							<div class="gh_tabs_pane"  role="tabpanel" id="t0Apply">
+								<ul class="account_plist" id="toConfirmDetails"></ul>
+								<div class="gh_noDataTips gh_none" id="applyTable-noRecord">
+									<div class="gh_noDataTips_activity gh_icons"></div>
+									<p class="gh_norecord">暂无记录~</p>
+								</div>
+								<div class="gh_tcdPageCode" id="applyTablePage" style="display: block; padding: 15px 0px; margin-top:0px ;"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- 活期详情模板 -->
+		<script id="account-myt0-info-template" class="mustache-template" type="text/template">
+			<div class="col-xs-12">
+				<div class="col-xs-12">
+					<span id="myt0Name" class="f_16 f_c47 pull-left">{{productName}}</span> {{#productLabels}}
+					<span class="pc_icon_hot f_f f_10 gh_tcenter ml15 pc_icon_hot pull-left" style="margin-top:20px;">{{labelName}}</span>{{/productLabels}}
+				</div>
+				<div class="col-xs-12 mt20">
+					<p class="f_47 f_20 ">{{annualInterestSec}} {{#rewardInterest}}<span class="f_14">+{{rewardInterest}}%</span>{{/rewardInterest}}</p>
+					<p class="f_c9 mt5 f_12">预期年化收益率</p>
+				</div>
+			</div>
+			<div class="col-xs-12 mt16 f_12">
+				<p class="col-xs-7 f_c9">万份收益：<span class="f_cred f_16">{{tenThsPerDayProfit}}</span>元</p>
+				<p class="col-xs-5 f_c9 mt3">起投金额：<span>{{investMin}}</span>元</p>
+			</div>
+		</script>
+		
+
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<div template-href='investPrapare'></div>		
+		<!--内容弹窗-->
+		<div class="gh_modal" id="content-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="gh_modal_dialog gh_modal_sm">
+				<div class="gh_modal_content">
+					<div class="gh_modal_header">
+						<h4 class="gh_modal_title" id="title">提示</h4>
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					</div>
+					<div class="gh_modal_body" id="content">项目已售罄，项目详情仅对本项目投资人公开</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--活期详情Modal-->
+		<div class="gh_modal" id="myt0-detail" tabindex="-1" role="dialog" data-backdrop="static">
+			<div class="gh_modal_dialog" style=" width: 828px; margin-top: 100px;">
+				<div class="gh_modal_content">
+					<div class="gh_modal_header">
+						<div class="gh_modal_title"><b>记录明细</b></div>
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					</div>
+					<div class="">
+						<table class="gh_table" id="myt0-detail-table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>订单编号</th>
+									<th>交易日期</th>
+									<th>类型</th>
+									<th class="gh_tright">金额(元)</th>
+									<th>交易状态</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+							
+						</table>
+						<div class="gh_tcdPageCode gh_pt15 gh_pb15" id="tradeTablePage"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 持有中 -->
+		<script id="holdingT0-template" class="mustache-template" type="text/template">
+			{{#products}}
+				<li class="account_plist_view">
+					<p class="gh_fw700">{{productName}}</p>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="gh_w18p"><p>{{value}}</p>持有金额(元)</td>
+							<td class="gh_w15p"><p>{{yesterdayIncome}}</p>昨日收益(元)</td>
+							<td class="gh_w15p"><p>{{holdTotalIncome}}</p>累计收益(元)</td>
+							<td class="gh_w15p"><p>{{redeemableHoldVolume}}</p>可赎回(元)</td>
+							<td class="gh_w15p"><p>{{toConfirmRedeemVolume}}</p>赎回冻结(元)</td>
+							<td class="account_btn_link">
+								<a href="javascript:;" data-oid="{{productOid}}" class="showRecord">记录明细</a>
+								{{#redeemHtml}}<a href="javascript:;" data-oid="{{productOid}}" class="doRedeem">转出</a>{{/redeemHtml}}
+								{{#investHtml}}<a href="javascript:;" data-oid="{{productOid}}" class="doInvest">转入</a>{{/investHtml}}
+							</td>
+						</tr>
+					</table>
+				</li>
+			{{/products}}
+		</script>
+		<!---->
+		
+		<!-- 申请中 -->
+		<script id="toConfirm-template" class="mustache-template" type="text/template">
+			{{#products}}
+			<li class="account_plist_view">
+				<p class="gh_fw700">{{productName}}</p>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td><p>{{toConfirmInvestVolume}}</p>待确认金额(元)</td>
+						<td class="gh_tright gh_pr15"><p>申请中</p>申请状态</td>
+					</tr>
+				</table>
+			</li>
+			{{/products}}
+		</script>
+		<!---->
+		
+	</body>
+</html>

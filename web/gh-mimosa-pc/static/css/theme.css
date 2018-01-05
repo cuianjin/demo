@@ -1,0 +1,697 @@
+/*
+ Name:GH颜色覆盖样式
+ Author:cuixu
+ Version:v1.0
+ Date:2017-11-8
+*/
+/*===========按钮渐变色覆盖===========*/
+/*未进行任何操作 按钮样式*/
+/*蓝色*/
+.gh_btn_blue,
+.gh_btn_blue:focus{color:#fff;
+background-image:linear-gradient(45deg, #4c84ff 0%, #2d6eff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #4c84ff, endColorstr = #2d6eff);
+box-shadow:0 10px 10px 0 rgba(50,94,248,0.18);}
+.gh_btn_blue:active,
+.gh_btn_blue:hover,
+.gh_btn_blue:visited{color:#fff;
+background-image:linear-gradient(45deg, #3A70E8 0%, #2963E8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #3A70E8, endColorstr = #2963E8);
+box-shadow:0 10px 10px 0 rgba(35,86,200,0.18);}
+
+/*橙色*/
+.gh_btn_orange,
+.gh_btn_orange:focus{color:#fff;
+background-image:linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);
+box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);}
+.gh_btn_orange:active,
+.gh_btn_orange:hover,
+.gh_btn_orange:visited{color:#fff;
+background-image:linear-gradient(45deg, #E4681B 0%, #E58624 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #E4681B, endColorstr = #E58624);
+box-shadow:0 10px 10px 0 rgba(190,87,14,0.18);}
+
+/*加载中、半禁用*/
+.gh_btn_blue.loading,
+.gh_btn_blue.loading:active,
+.gh_btn_blue.loading:hover,
+.gh_btn_blue.loading:visited,
+.gh_btn_blue.loading:focus{color:#fff;
+background-image:linear-gradient(45deg, #b4ccff 0%, #a8c3ff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #b4ccff, endColorstr = #a8c3ff);
+box-shadow:0 10px 10px 0 rgba(50,94,248,0.18);}
+.gh_btn_orange.loading,
+.gh_btn_orange.loading:active,
+.gh_btn_orange.loading:hover,
+.gh_btn_orange.loading:visited,
+.gh_btn_orange.loading:focus{color:#fff;
+background-image:linear-gradient(34deg, #fec4a5 0%, #fed8aa 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fec4a5, endColorstr = #fed8aa);
+box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);}
+
+/*按钮禁用*/
+.gh_btn_disabled,
+.gh_btn_disabled:hover,
+.gh_btn_disabled:active,
+.gh_btn_disabled:visited,
+.gh_btn_disabled:focus{color:#fff;
+background-image:linear-gradient(-125deg, #d6d6d6 0%,#cacaca 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #d6d6d6, endColorstr = #cacaca);
+box-shadow:0 10px 10px 0 rgba(156,149,147,0.18);}
+
+/*outline*/
+.gh_btn_blue.gh_btn_outline,
+.gh_btn_blue.gh_btn_outline:focus{color:#2d6fff;;background:#fff;box-shadow:0 5px 5px 0 rgba(74,144,226,0.18);border: 1px solid #aac8ff;filter:progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #ffffff, endColorstr = #ffffff)}
+.gh_btn_blue.gh_btn_outline:active,
+.gh_btn_blue.gh_btn_outline:hover,
+.gh_btn_blue.gh_btn_outline:visited{color:#2d6fff;background:#f6faff;box-shadow:0 5px 5px 0 rgba(74,144,226,0.18);border: 1px solid #aac8ff;filter:progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #ffffff, endColorstr = #ffffff)}
+
+.gh_btn_orange.gh_btn_outline,
+.gh_btn_orange.gh_btn_outline:focus{color:#fc892a;background:#fff;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);border: 1px solid #fc892a;filter:progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #ffffff, endColorstr = #ffffff)}
+.gh_btn_orange.gh_btn_outline:active,
+.gh_btn_orange.gh_btn_outline:hover,
+.gh_btn_orange.gh_btn_outline:visited{color:#e4761f;background:#fff;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);border: 1px solid #e4761f;filter:progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #ffffff, endColorstr = #ffffff)}
+
+/*弹窗*/
+.gh_modal_dialog {background: #ffffff;}
+.gh_modal_content {background-color: #fff;}
+/*进度条颜色*/
+.gh_progress{background-color: #ffeed9;}
+.gh_progressbar_orange{
+	background-image: linear-gradient(34deg,#fb7023 0%, #fca332 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);
+}
+/*===主题布局===*/
+.gh_main{
+	border:1px solid #eee;
+	background:#f5f8fa;
+	box-shadow:0 0 8px 0 rgba(139,143,160,0.10);
+}
+.gh_box {
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);
+}
+.gh_sidecon{
+	border-left: 1px solid #eee;
+	background:#ffffff;
+}
+/*===sidetab===*/
+.gh_sidebar_nav a:hover{color: #4982ff;}
+.gh_sidebar_nav a.active{
+	background: #fff;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	border-right:1px solid #fff;
+	color: #4982ff;
+}
+.gh_sidebar_nav a.gh_topline.active{border-top: 1px solid #eee;}
+
+/*===tabs===*/
+.gh_tabs_nav{border-bottom: 1px solid #eee;}
+.gh_tabs_nav li a:hover{color: #2d6eff;}
+.gh_tabs_nav li.active a{border-bottom: 3px solid #2d6eff;color: #2d6eff;}
+.gh_tabs_pane .gh_tabs_nav li{border: 1px solid #ddd;border-bottom: none;}
+.gh_tabs_pane .gh_tabs_nav li.active a{border-top: 2px solid #2d6eff;color: #2d6eff;}
+
+/*===无数据提示样式===*/
+.gh_norecord {color: #abb5c4;}
+.gh_tr_coor {border-bottom: 1px solid #f2f2f2;color: #262626;}
+
+/*===分页样式===*/
+.gh_tcdPageCode{color: #ccc;}
+.gh_tcdPageCode span{border-left: 1px solid #f2f2f2;}
+.gh_tcdPageCode span.disabled {color: #bfbfbf;border: 1px solid #f2f2f2;}
+.gh_tcdPageCode span.current {
+    color: #fff;
+    background-color: #0D84F2;
+    border: 1px solid #0D84F2;
+}
+.gh_tcdPageCode a {
+    color: #474e5d;
+    background-color: #fff;
+}
+.gh_tcdPageCode a.tcdNumber {
+    border-top: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+}
+.gh_tcdPageCode a.nextPage, .gh_tcdPageCode a.prevPage {border: 1px solid #f2f2f2;}
+.gh_icon_success {color: #fff;}
+
+/*===共用表单label~input===*/
+.gh_form_group label{color: #222;}
+
+/*============颜色=============*/
+/*common.css*/
+/*===头部===*/
+.gh_header_app_erweima p{color: #888;}
+.gh_nologin>a{color: #fff;}
+.gh_navbar_navs>a{color: #fff;}
+.gh_header_myauth{color: #fff;}
+.gh_dropdown_box li a:hover{color:#2d6fff;}
+.gh_dropdown_content>p:first-child{color: #222;}
+.gh_dropdown_content>p:last-child{color: #999;}
+.gh_loginStatus li:hover a{color: #222;}
+/*===注册样式===*/
+.gh_veribtn.btn_loading{color:#ddd}
+.gh_reg_success{color: #fff;}
+/*===登录样式===*/
+.gh_findPwd{color: #337BE9;}
+.gh_findPwd:hover{color: #4891fa;}
+/*===交易密码\payPwd.html===*/
+.paypwd_vbtn{color: #359EFF;}
+/*找回密码*/
+.gh_pwd_vericode_btn{color:#2d6fff;}
+.gh_pwd_vericode_btn.btn_loading{color: ##bbb;}
+/*===account.css===*/
+/*===账户中心===*/
+.account_user_info{color: #333333;}
+.account_view_text{color: #666;}
+.account_view_text p{color: #444;}
+.account_rtxt>ul>li{color: #666;}
+/*===我的活期===*/
+.account_plist_view table{color: #666;}
+.account_plist_view table p{color: #222;}
+.account_plist_view table span{color:#666;}
+.account_btn_link a{color: #2d6eff;}
+/*===交易单===*/
+.gh_filter_term li{color: #666;}
+.gh_filter_term li a{color: #666;}
+.gh_filter_term li a.active{color: #333;}
+.gh_filter_term_date .form-control{color: #666;}
+/*===我的银行卡===*/
+.account_card_txt{color: #000;}
+.account_bankcon p{color: #537696;}
+.account_bankcard_bottom{color:#537696;}
+/*===安全设置===*/
+.account_title{color: #333;}
+.account_progress_bar{color: #fff;}
+/*===我的优惠券===*/
+.coupon_used.btn:hover,
+.coupon_used.btn:active,
+.coupon_used.btn:focus,
+.coupon_used.btn:visited{
+	color: #fff;
+}
+.usedBox.coupon_used.btn:hover,
+.usedBox.coupon_used.btn:active,
+.usedBox.coupon_used.btn:focus,
+.usedBox.coupon_used.btn:visited{
+	color: #fff;
+}
+.expiredBox.coupon_used.btn:hover,
+.expiredBox.coupon_used.btn:active,
+.expiredBox.coupon_used.btn:focus,
+.expiredBox.coupon_used.btn:visited{
+	color: #fff;
+}
+/*===消息===*/
+.message-title .title{color: #222;}
+.message-title .date{color: #222;}
+.message-detail,
+.message-nodetail {color: #4891fa;}
+.message-detail a {color: #4891fa;}
+/*========我的邀请/account-invivate.html========*/
+.account_tab_tips{color: #888;}
+
+/*========deal.css========*/
+/*========**赎回\product-redeem.html=========*/
+.all_redeem_btn{color: #2d6fff;}
+.redeem_rule{color: #999;}
+/*========**交易相关结果页\product-result.html=========*/
+.result_title{color: #222;}
+.result_content{color: #222;}
+.redeem_box div{color: #999;}
+.redeem_box div:first-child{color: #222;}
+/*========**申购\account-apply.html=========*/
+.apply_product_box p{color:#222;}
+.apply_coupon_list_box{color: #999;}
+.nouse_coupon span{color: #222;}
+.apply_needpay{color:#222;}
+/*========**提现\account-withdraw.html=========*/
+.forget_pwd{color: #2d6fff;}
+/*========**充值\account-deposit.html=========*/
+.deposit_bank_img{color: #2d6fff;}
+.deposit_limit_money{color: #999;}
+.deal_message{color: red;}
+/*========**投前准备\account-validate.html=========*/
+.validata_step i{color: #999;}
+.validata_step.active i{color: #fff;}
+.risk-appraisal-list p{color: #000;}
+
+/*========other.css========*/
+/*========平台公告/notice.html========*/
+.message_title .title{color: #222;}
+.message_title .date{color: #222;}
+/*========邀请有礼/invite.html========*/
+.invite_rules_box{color: #8e020a !important;}
+.invite_rules_box.share{color: #8e020a !important;}
+.share_botton_gologin{color: #fff;}
+.share_myinvite, .share_invitechart{color: #8e020a !important;}
+.share_myinvite .share_botton_gologin{color: #fff;}
+/*========媒体报道/account-newlist.html========*/
+.new-title{color: #5e5e5e;}
+.new-summary{color: #999;}
+/*========关于我们/aboutUs.html========*/
+.map_tab_con p{color: #222;}
+.map_tab_con p a{color: #222}
+.nav_title a{color: #444;}
+.nav_title a:hover{color: #2d6eff;}
+.nav_title a.on{color: #2d6eff;}
+.aboutUs_div p{color: #6d6d6d;}
+.aboutUs_div1 p{color: #6d6d6d;}
+.aboutUs_div1 span{color: #333333;}
+.aboutUs_div1 p a {color: #4183c4;}
+/*========404/404.html========*/
+.other_404 a{color: #4982FF;}
+
+/*========product.css========*/
+/*========首页样式\index.html=========*/
+.index_supernatant{color: #fff;}
+.index_supernatant_content{color: #fff;}
+.index_supernatant_instr{color: #fff;}
+.index_logindone_number{color: #fff;}
+/*公告*/
+.index_notice_box{color: #575757;}
+/*安全保障*/
+.index_safe_box .index_safe_title{color: #888;}
+.index_safe_box .index_safe_introduce{color: #666;}
+/*平台数据*/
+.index_data_tradenum p,.index_data_tradenum p{color;#5a646d;}
+/*公司荣誉*/
+.index_capital_title{color: #222;}
+/*明星产品*/
+.index_product_type{color: #333;}
+/*定期推荐产品共用卡片样式*/
+.gh_tndata{color: #222;}
+/*媒体报道*/
+.index_more_new{color: #4892FF;}
+.index_partner_title{color: #222;}
+/*==========产品详情（活期&定期）product-t0.html&product-tn.html==========*/
+.prodtct_detail_title{color: #222;}
+.product_detail_lable{color: #c27e0e;}
+.product_detail_gridnav div{color: #222;}
+.product_box_chart .gh_tabs_nav li a{color: #444;}
+.product_box_chart .gh_tabs_nav li a:hover,.product_tab_intrduce .gh_tabs_nav li a:hover{color:#2d6fff;}
+.product_box_chart .gh_tabs_nav li.active a ,.product_tab_intrduce .gh_tabs_nav li.active a{color: #2d6eff;}
+.product_circle_box>li{color: #000;}
+.product_circle_box>li span{color: #000;}
+.product_detail_tablecontent thead tr{color: #abb5c4;}
+.product_detail_tablecontent2{color: #666;}
+/*==============定期列表================*/
+.product_tnlist_select1 .all_choose_btn{color: #666;}
+.product_tnlist_select1 .all_choose_btn.active{color: #333;}
+.product_tnlist_select1 .gh_row ul li{color: #666;}
+.product_tnlist_select1 .gh_row ul li.active span{color: #333;}
+.product_tnlist_select2 ul li{color: #666;}
+.gh_icon_tnsort{color: #666;}
+.product_tnlist_select2 ul li>a.active{color: #359eff;}
+/*列表样式*/
+.investmoney_name{color: #cd4300;}
+/*收益计算器*/
+.calculator.gh_modal_dialog{color: #333;}
+.calculator.gh_modal_dialog .gh_tabs_nav li a:hover,.calculator.gh_modal_dialog .gh_tabs_nav li.active a{color: #4982ff;}
+.calculate-reset-btn{color: #2d6fff;}
+.calculate-reset-btn:hover{color: #2d6fff;}
+
+/*========usermgmt.css========*/
+/*========忘记登录密码\find-pwd.html=========*/
+.findpwd_steps{color: #999999;}
+.findpwd_steps_box .one.on .findpwd_steps,.two.on .findpwd_steps,.three.on .findpwd_steps{color: #fff;}
+.step_tips{color: #000;}
+.find_pwd_tips{color: red;}
+/*产品标签*/
+/*投资者标签*/
+.gh_tag_investor {color:#329822;}
+/*风险等级标签*/
+.gh_tag_risk_level{color:#ce8918;}
+/*基础标签*/
+.gh_tag_general{color:#4a72e2;}
+/*扩展标签*/
+.gh_tag_extend{color:#f85b32;}
+.gh_progress_buble{color: #fff;}
+/*弹窗*/
+.gh_modal_title{color:#222;}
+/*输入框颜色*/
+.form-group ::-webkit-input-placeholder {
+	color: #ccc;
+}
+.form-group :-moz-placeholder {
+	color: #ccc;
+}
+.form-group ::-moz-placeholder {
+	color: #ccc;
+}
+.form-group :-ms-input-placeholder {
+	color: #ccc;
+}
+/*============背景颜色=============*/
+/*common.css*/
+/*头部*/
+.gh_navbar_top{background: #fff;}
+.gh_header_app_erweima{background: #fff;}
+.gh_navbar_bottom{background: #fff;}
+.gh_navbar_right{background: #2d6eff;}
+.gh_navbar_right_box{background: #2d6eff;}
+.gh_navbar_left{
+	background-image: linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*背景渐变*/
+	background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容谷歌内核*/
+    background-image: -gecko-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容火狐内核*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);/*兼容ie8浏览器*/
+}
+.gh_gap_line{background: #fff;}
+.gh_dropdown_box{background: #fff;box-shadow:0 2px 6px 0 rgba(0,0,0,0.08);}
+.gh_loginStatus li:hover{background: #fff;}
+/*===尾部样式===*/
+.gh_footer_box{background: #fff;}
+.gh_footer_gary .gh_footer_box{background-image: linear-gradient(45deg, #f8f8f8 55%, #f2f2f2 79%, #fafafa 100%)!important;}
+/*===注册样式===*/
+.gh_register_box{background: #fff;box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);}
+.gh_register_modal{background: rgba(0,0,0,0.3);}
+.gh_register_dialog{background: #ffffff;}
+.gh_register_modal .gh_register_dialog a:nth-child(1){box-shadow: 0 5px 5px 0 rgba(74,144,226,0.18);}
+.gh_register_modal .gh_register_dialog a:nth-child(2){background-image: linear-gradient(34deg,#fb7023 0%,#fca332 100%);box-shadow: 0 10px 10px 0 rgba(248,91,50,0.18);}
+/*===登录样式===*/
+.gh_login_box{background: #fff;box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);}
+.gh_login_box ul li.active a{background: #fff;}
+
+/*===交易密码\payPwd.html===*/
+.gh_point {background:#595959;}
+.paypwd_vbtn{background: #fff;}
+/*========account.css========*/
+/*========账户中心/account.html========*/
+.c1{background: #2d6eff;}
+.c2{background: #ff7b3c;}
+.c3{background: #3abaff;}
+.c4{background: #f3b256;}
+.c5{background: #38bd60;}
+.c6{background: #f65205;}
+.c7{background: #ff7b3c;}
+.c8{background: #f3b256;}
+/*========交易单/account-tradelist.html========*/
+.gh_filter_term li a.active{background: #e9edf5;}
+/*========我的银行卡/account-myCard.html========*/
+.account_card_box.unbind{background: #fff;box-shadow:0 5px 16px 0 rgba(104,98,94,0.10);}
+.account_bankcard_bottom{
+	background:rgba(255,255,255,0.35);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#40ffffff,endColorstr=#40ffffff);
+}
+/*========安全设置/account-mySetting.html========*/
+.account_process{background: #ffeed9;box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.1);}
+.account_progress_bar{
+	background-image: linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+	background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容谷歌内核*/
+    background-image: -gecko-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容火狐内核*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);/*兼容ie8浏览器*/
+	background-color: #337ab7;
+}
+.gh_btn.account_btn{
+	background-image: linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+	background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容谷歌内核*/
+    background-image: -gecko-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容火狐内核*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);/*兼容ie8浏览器*/
+}
+/*========我的优惠券/account-mySetting.html========*/
+.coupon_used.btn{
+	background-image:linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+	background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容谷歌内核*/
+    background-image: -gecko-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容火狐内核*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);/*兼容ie8浏览器*/
+}
+.coupon_used.btn:hover,
+.coupon_used.btn:active,
+.coupon_used.btn:focus,
+.coupon_used.btn:visited {
+	background-image:linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+	background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容谷歌内核*/
+    background-image: -gecko-linear-gradient(34deg, #fb7023 0%, #fca332 100%);/*兼容火狐内核*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);/*兼容ie8浏览器*/
+}
+.usedBox.coupon_used.btn:hover,
+.usedBox.coupon_used.btn:active,
+.usedBox.coupon_used.btn:focus,
+.usedBox.coupon_used.btn:visited {
+	background: #d4d4d4;
+}
+.expiredBox.coupon_used.btn:hover,
+.expiredBox.coupon_used.btn:active,
+.expiredBox.coupon_used.btn:focus,
+.expiredBox.coupon_used.btn:visited {
+	background: #d4d4d4;
+}
+/*========消息/account-message.html========*/
+.noread-icon{background: #ff0000;}
+
+/*========deal.css========*/
+/*========交易共用========*/
+.deal_title_line{background: #2d6fff;}
+.deal_box{background: #fff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+/*========**交易相关结果页\product-result.html=========*/
+.content_result_box{background: #ffffff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+.result_circle{background: #ffffff;}
+.result_circle.active{background: #0d84f2;}
+.result_line{background: #dddddd;}
+/*========**申购\account-apply.html=========*/
+.apply_product_box{background: #f6faff;}
+.apply_coupon_list{background: #ffffff;box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.09);}
+/*========**充值\account-deposit.html=========*/
+.deposit_bank_box li{background: #ffffff;}
+.deposit_circle{background: #fff;}
+.deposit_circle.active{background: #fff;}
+.deposit_circle.active>span{background: #4891fa;}
+/*========**投前准备\account-validate.html=========*/
+.validata_box{background: #fff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+.validata_step i{background: #ffffff;}
+.validata_step.active i{background: #2d6eff;}
+
+/*========other.css========*/
+/*========安全保障/safety.html========*/
+.safety_box{background: #fff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+.safety_border_grap{background: #f2f2f2;}
+/*========平台公告/notice.html========*/
+.notice_box{background: #fff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+/*========邀请有礼/invite.html========*/
+.invite_rules_box{
+	background-image: -webkit-linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    background-image: -moz-linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    background-image: -o-linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    background-image: linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #facc53, endColorstr = #fbb430);
+}
+.invite_rules_box .invite_line{background: #8e020a;}
+.invite_rules_box.share{
+	background-image: -webkit-linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    background-image: -moz-linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    background-image: -o-linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    background-image: linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #facc53, endColorstr = #fbb430);
+}
+.share_botton_gologin{
+	background-image: linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+    background-image: -webkit-linear-gradient(34deg, #fb7023 0%, #fca332 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);
+}
+.share_myinvite, .share_invitechart{
+	background-image: -webkit-linear-gradient(46deg, #facc53 0%, #fbb430 100%);
+    background-image: -moz-linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    background-image: -o-linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    background-image: linear-gradient(46deg, #facc53 0%,#fbb430 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #facc53, endColorstr = #fbb430);
+}
+.share_myinvite_title{background: #fab02b;}
+/*========媒体报道/account-newlist.html========*/
+.newlist_box{box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+.newlist_content_box{box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+/*========关于我们/aboutUs.html========*/
+.map_tab{background:rgba(255,255,255,.8);}
+.pc_border_grap{background: #f2f2f2;}
+/*========404/404.html========*/
+.other_404{background: #fff;}
+
+/*========product.css========*/
+/*========首页样式\index.html=========*/
+.index_banner .carousel-indicators li{background: rgba(255, 255, 255, 0.30);}
+.index_banner .carousel-indicators li.active{background: #ffffff;}
+.index_banner_supernatant{
+	background: rgba(42, 42, 46,0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#992a2a2e,endColorstr=#992a2a2e); /*IE8支持*/
+}
+.swiper-pagination-switch{background: #fff;}
+.swiper-active-switch{background: #fff;}
+.swiper-pagination-bullet{background: #fff;}
+/*公告*/
+.index_hr{background: #f2f2f2;}
+/*安全保障*/
+.index_safe_box{background: #fff;}
+/*公司荣誉*/
+.index_capital_box{background: #fff;}
+/*员工产品*/
+.index_staff_box{background: #fff;}
+/*媒体报道*/
+.index_news_box{background: #fff;}
+/*==========产品详情（活期&定期）product-t0.html&product-tn.html==========*/
+.prodtct_detail_box{background: #fff;box-shadow: 0 5px 16px 0 rgba(104, 98, 94, 0.10);}
+.product_detail_lable{background: #fbe7c5;}
+.product_tab_intrduce{box-shadow: 0 5px 16px 0 rgba(104, 98, 94, 0.10);}
+.product_detail_tablecontent thead tr{background-color: #fbfbfc;}
+/*===定期列表===*/
+.product_tnlist_select1 .all_choose_btn.active{background: #e9edf5;}
+.product_tnlist_select1 .gh_row ul li.active span{background: #e9edf5;}
+.product_tnlist_select2{background: #f2f2f2;}
+.tn_card li{box-shadow:0 10px 16px 0 rgba(96,67,44,0.08);}
+/*列表样式*/
+.investmoney_name{background-image: -webkit-gradient(linear, left 0, right 50%, from(#cd4300), to(#ff8e00));}
+/*收益计算器*/
+.calculate-count-btn{background-image: linear-gradient(45deg, #2d6eff 0%, #4c84ff 100%);box-shadow: 0 10px 10px 0 rgba(50,94,248,0.18);}
+.calculate-reset-btn{box-shadow: 0 5px 5px 0 rgba(74,144,226,0.18);}
+.input_border{background: #ffffff;}
+
+/*========usermgmt.css========*/
+/*========忘记登录密码\find-pwd.html=========*/
+.findpwd_container{background: #fff;box-shadow: 0 0 8px 0 rgba(139,143,160,0.10);}
+.findpwd_steps{background-color: #fff;}
+.findpwd_steps_box .one.on .findpwd_steps,.two.on .findpwd_steps,.three.on .findpwd_steps{background: #4891fa;}
+
+
+/*产品标签*/
+/*投资者标签*/
+.gh_tag_investor {background:#d1efe2;}
+/*风险等级标签*/
+.gh_tag_risk_level{background:#fcf0db;}
+/*基础标签*/
+.gh_tag_general{background:#e3eaff;}
+/*扩展标签*/
+.gh_tag_extend{background:#feeaea;}
+.gh_progress_buble{background: #ff8027;}
+
+
+/*============边框颜色=============*/
+/*======common.css=====*/
+/*头部*/
+.gh_navbar_top{border-color: #fff;}
+.gh_noProgress {border-top: 1px solid #F2F2F2;}
+.gh_dropdown_box{border-bottom: 1px solid #d8e6ff;border-left: 1px solid #d8e6ff;border-right: 1px solid #d8e6ff;}
+.gh_dropdown_box .gh_header_img{border-bottom: 1px solid #f2f2f2;}
+/*===尾部样式===*/
+.gh_footer_copyright{border-top: 1px solid #EBEBEB;}
+/*===注册样式===*/
+.gh_register_box ul li{border-top: 3px solid #2d6fff;}
+.gh_popup_cotaint .form-group {border: 1px solid #ddd;}
+.gh_popup_cotaint .form-control{border-color: #eee;}
+.gh_veribtn{border-left: 1px solid #ddd;}
+.gh_register_modal .gh_register_dialog a:nth-child(1){border: 1px solid #aac8ff;}
+/*===登录样式===*/
+.gh_login_box ul{border-top: 3px solid #2d6fff;}
+.gh_login_box ul li a {
+    background: #f6faff;
+    border: 1px solid #e2e6ef;
+}
+/*找回密码*/
+.gh_pwd_vericode_btn{border-left:1px solid #eee;}
+/*===交易密码\payPwd.html===*/
+.paypwd_pwd_box{border: 1px solid #eee;}
+.paypwd_pwd_box.gh_onfocus{border:1px solid #4891fa;}
+.paypwd_pwd_box li{border-right: 1px solid #eee;}
+.paypwd_vcode{border: 1px solid #eee;}
+/*========account.css========*/
+/*========账户中心/account.html========*/
+.account_rtxt{border-top:1px solid #eeeeee;}
+.account_rtxt>ul>li{border-bottom:1px solid #eeeeee;}
+/*========我的活期/account-myt0.html========*/
+.account_plist_view{border-bottom: 1px solid #eee;}
+/*========交易单/account-tradelist.html========*/
+.gh_filter_term_date .form-control{border:1px solid #eeeeee;}
+/*========我的银行卡/account-myCard.html========*/
+.account_card_box.unbind{border:1px dotted #999;}
+/*========安全设置/account-mySetting.html========*/
+.account_border_b{border-bottom: 1px solid #EEEEEE;}
+/*========我的优惠券/account-mySetting.html========*/
+.usedBox.coupon_used.btn:hover,
+.usedBox.coupon_used.btn:active,
+.usedBox.coupon_used.btn:focus,
+.usedBox.coupon_used.btn:visited {
+	border-color: #d4d4d4;
+}
+.expiredBox.coupon_used.btn:hover,
+.expiredBox.coupon_used.btn:active,
+.expiredBox.coupon_used.btn:focus,
+.expiredBox.coupon_used.btn:visited {
+	border-color: #d4d4d4;
+}
+/*========消息/account-message.html========*/
+.message-lists ul li{border-bottom: 1px solid #eee;}
+/*========风险测评/account-risktesting.html========*/
+.account_risktesting_top{border-bottom:1px solid #f2f2f2;}
+
+/*========deal.css========*/
+/*========**交易相关结果页\product-result.html=========*/
+.content_result_box{border: 1px solid #eeeeee;}
+.result_circle{border: 1px solid #dddddd;}
+/*========**申购\account-apply.html=========*/
+.apply_product_box{border: 1px solid #aac8ff;}
+.apply_coupon_list_box{border:1px solid #eee;}
+.apply_coupon_list{border-left: 1px solid #e8e8e8;border-right: 1px solid #e8e8e8;border-bottom: 1px solid #e8e8e8;}
+/*========**充值\account-deposit.html=========*/
+.deposit_bank_box li{border: 1px solid #eee;}
+.deposit_circle{border: 1px solid #ccc;}
+.deposit_circle.active{border: 1px solid #ccc;}
+/*========**投前准备\account-validate.html=========*/
+.validata_box_top{border-bottom: 1px solid #f2f2f2;}
+.validata_step i{border: 1px solid #dadde3;}
+.validata_step.active i{border: 1px solid #2d6eff;}
+.risk-appraisal-list{border-bottom: 1px solid #eee;}
+
+/*========other.css========*/
+/*========常见问题/problems.html========*/
+.problems_list li{border-bottom: 1px solid #eee;}
+/*========平台公告/notice.html========*/
+.notice_ul li{border-bottom: 1px solid #eee;}
+/*========邀请有礼/invite.html========*/
+.share_myinvite_list{border-bottom: 1px solid #fab02b;}
+/*========媒体报道/account-newlist.html========*/
+.newlist_back{border: 1px solid #eee;}
+.new-li{border-bottom: 1px solid #eee;}
+/*========关于我们/aboutUs.html========*/
+.about-map-box img{border: #e3e3e3;}
+.nav_title{border-bottom: 1px solid #f2f2f2;}
+.nav_title a.on{border-bottom:3px solid #2d6eff;}
+.pc_border_top{border-top: 1px solid #f2f2f2;}
+.pc_border_bottom_dotted{border-bottom: 1px dotted #eee;}
+.pc_border_right{border-right: 1px solid #eee;}
+
+/*========product.css========*/
+/*========首页样式\index.html=========*/
+/*定期推荐产品共用卡片样式*/
+.tn_card li{border: 1px solid #f2f2f2;}
+/*媒体报道*/
+.index_news_box{border-right: 1px dotted #f2f2f2;}
+/*==========产品详情（活期&定期）product-t0.html&product-tn.html==========*/
+.prodtct_detail_box{border: 1px solid #eee\0;}
+.prodtct_detail_title{border-bottom: 1px solid #f2f2f2;}
+.product_detail_gridnav{border-top: 1px dotted #e8e8e8;}
+.product_detailbox_right{border-left: 1px solid rgba(255, 227, 159, 0.60);}
+.product_input_count{border:1px solid #eee;}
+.product_input_count input:focus{border-color: transparent;}
+.product_box_chart .gh_tabs_nav{border-color:#f2f2f2;}
+.product_box_chart .gh_tabs_nav li.active a ,.product_tab_intrduce .gh_tabs_nav li.active a{border-bottom: 5px solid #2d6eff;}
+.product_tab_intrduce{border: 1px solid #eee\0;}
+.product_tab_intrduce ul{border-color: #f2f2f2;}
+.product_detail_project{border: 3px solid #ffffff;}
+.product_detail_tablecontent thead{border-top: 1px solid #f2f2f2;border-bottom: 1px solid #f2f2f2;}
+.product_detail_tablecontent > thead:first-child > tr:first-child > td{border-top: 1px solid #f2f2f2;}
+/*==============定期列表================*/
+.product_tnlist_select1 .gh_row ul li{border-left: 1px solid #ddd;}
+.tn_card li{border:1px solid #f3e6d7;}
+/*列表样式*/
+.tn_list li{border-bottom: 1px dotted #f2f2f2;}
+/*收益计算器*/
+.calculate-reset-btn{border: 1px solid #aac8ff;}
+.input_border{border: 1px solid #eee;}
+.calculator.gh_modal_dialog .gh_modal_footer{border-top: 1px solid #e5e5e5;}
+.total_profit{border-right: 1px solid #f2f2f2;}
+
+/*========usermgmt.css========*/
+/*========忘记登录密码\find-pwd.html=========*/
+.findpwd_steps{border: 1px solid #dddddd;}
+.findpwd_steps_box .one.on .findpwd_steps,.two.on .findpwd_steps,.three.on .findpwd_steps{border: 1px solid #4891fa;}

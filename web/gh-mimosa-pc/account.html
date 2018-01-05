@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>账户总览-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    	<![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/echarts.common.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHrisk.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="overViewUsr"></div>
+				</div>
+				<!--账户总览-content-->
+				<div class="gh_sidecon gh_con">
+					<!--top-->
+					<div class="gh_row">
+						<div class="gh_col_12">
+							<p>
+								<span id="capitalAmount" class="gh_f30 gh_corg" data-amount="***">--</span>
+								<span class="account_icon gh_icon_eyes gh_icons gh_ml10" id="seeAmount"></span>
+							</p>
+							<p class="gh_c6 gh_mt5">总资产(元) </p>
+						</div>
+					</div>
+							
+					<div class="gh_row gh_mt15 account_view_text">
+						<div class="gh_col_3">
+							<p id="balance" data-amount="***">--</p>
+							可用余额(元)
+						</div>
+						<div class="gh_col_3">
+							<p id="t0CapitalAmount" data-amount="***">--</p>
+							活期(元)
+						</div>
+						<div class="gh_col_3">
+							<p id="tnCapitalAmount" data-amount="***">--</p>
+							定期(元)
+						</div>
+						<div class="gh_col_3">
+							<p id="withdrawFrozenBalance" data-amount="***">--</p>
+							提现冻结资金(元)
+						</div>
+					</div>
+					<div class="gh_row gh_mt30">
+						<div class="gh_col_6">
+							<span class="gh_btn gh_btn_orange gh_btn_xs gh_mr10" id="deposit">充值</span>
+							<span class="gh_btn gh_btn_orange gh_btn_xs gh_btn_outline" id="withdraw">提现</span>
+						</div>
+					</div>
+					
+					<hr class="gh_mt35 gh_mb20"></hr>
+					<!--middle资产分布扇形图-->
+					<div class="gh_row">
+						<div class="gh_col_6 gh_tcenter" style="padding-left: 0px;height:330px;">
+							<!--<div class="asset-title">资产分布</div>-->
+							<div id="assetPartsPie" style="height:330px;"></div>
+							<div class="gh_c3" style="margin-top: -190px;">
+								<div class="">总资产(元)</div>
+								<div class="gh_f24" id="pie_capitalAmount">--</div>
+							</div>
+						</div>
+						<div class="gh_col_6">
+							<div class="account_rtxt">
+								<ul>
+									<li class="gh_row">
+										<div class="gh_col_4"><i class="account_icon_point c1"></i>持有活期</div>
+										<div class="gh_col_2 gh_tright" id="part_t0CapitalAmount_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_t0CapitalAmount" data-amount="***">--</span></div>
+									</li>
+									<li class="gh_row">
+										<div class="gh_col_4"><i class="account_icon_point c2"></i>持有定期</div>
+										<div class="gh_col_2 gh_tright" id="part_tnCapitalAmount_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_tnCapitalAmount" data-amount="***">--</span></div>
+									</li>
+									<li class="gh_row">
+										<div class="gh_col_4"><i class="account_icon_point c3"></i>可用余额</div>
+										<div class="gh_col_2 gh_tright" id="part_balance_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_balance" data-amount="***">--</span></div>
+									</li>
+									<li class="gh_row">
+										<div class="gh_col_4"><i class="account_icon_point c4"></i>申请中</div>
+										<div class="gh_col_2 gh_tright" id="part_applyAmt_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_applyAmt" data-amount="***">--</span></div>
+									</li>
+									<li class="gh_row">
+										<div class="gh_col_4"><i class="account_icon_point c5"></i>冻结金额</div>
+										<div class="gh_col_2 gh_tright" id="part_withdrawFrozenBalance_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_withdrawFrozenBalance" data-amount="***">--</span></div>
+									</li>
+									<!--<li class="row">
+										<div class="gh_col_4"><i class="icon_point c6"></i>体验金</div>
+										<div class="gh_col_2 gh_tright" id="part_experienceCouponAmount_percent">--</div>
+										<div class="gh_col_6 gh_tright"><span id="part_experienceCouponAmount" data-amount="***">--</span></div>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<hr class="gh_mt35 gh_mb20"></hr>
+					<div class="gh_row gh_mt55">
+						<div class="gh_col_3 account_view_text">
+							<p id="t0YesterdayIncome" data-amount="***">--</p>
+							昨日收益(元)
+						</div>
+						<div class="gh_col_3 account_view_text">
+							<p id="totalIncomeAmount" data-amount="***">--</p>
+							累计收益(元)
+						</div>
+						<div class="gh_col_12">
+							<div class="gh_noDataTips gh_none" id="noReCord">
+								<div class="gh_noDataTips_activity gh_icons"></div>
+								<p class="gh_norecord">暂无收益记录~</p>
+							</div>
+							<div id="assetProfitLine" class="none" style="height:274px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<div template-href='investPrapare'></div>		
+		
+		<!--内容弹窗-->
+		<div class="gh_modal" id="content-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="gh_modal_dialog gh_modal_sm">
+				<div class="gh_modal_content">
+					<div class="gh_modal_header">
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+						<div class="gh_modal_title" id="title">提示</div>
+					</div>
+					<div class="gh_modal_body withdraw " id="content"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

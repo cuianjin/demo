@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>我的优惠券-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+	    <![endif]-->
+			<!--[if lte IE 8]>
+	        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/account-myCoupon.js"></script>
+		<script src="static/js/GHredPackets.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-myIncome" class="account login_tip myCoupon">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="CouponUsr"></div>
+				</div>
+				<!--定期-content-->
+				<div class="gh_sidecon gh_con">
+					<div class="gh_f18 gh_c2"><b>我的优惠券</b></div>
+
+					<div class="gh_mt20 gh_tabs">
+						<ul class="gh_tabs_nav" role="tablist">
+							<li class="active"  role="presentation" data-pane="#notUsed">
+								<a href="javascript:;" role="tab">未使用(<span id="notUsedNum">--</span>)</a>
+							</li>
+							<li  role="presentation" data-pane="#used">
+								<a href="javascript:;" role="tab">已使用(<span id="usedNum">--</span>)</a>
+							</li>
+							<li  role="presentation" data-pane="#expired">
+								<a href="javascript:;" role="tab">已失效(<span id="expiredNum">--</span>)</a>
+							</li>
+						</ul>
+						<div class="gh_tabs_con">
+							<div class="gh_tabs_pane active" role="tabpanel" id="notUsed">
+								<div id="notUsedBox" class="notUsedBox gh_clearfix"></div>
+								<div class="gh_tcdPageCode notUsed gh_mt30" style=""></div>
+								<div class="gh_noDataTips gh_none" id="notUsed-noRecord">
+									<div class="gh_noDataTips_coupon gh_icons"></div>
+									<p class="gh_norecord">暂无优惠券~</p>
+								</div>
+							</div>
+							<div class="gh_tabs_pane" role="tabpanel" id="used">
+								<div id="usedBox" class="usedBox gh_clearfix"></div>
+								<div class="gh_tcdPageCode used gh_mr100 gh_mt30" style=""></div>
+								<div class="gh_noDataTips gh_none" id="used-noRecord">
+									<div class="gh_noDataTips_coupon gh_icons"></div>
+									<p class="gh_norecord">暂无优惠券~</p>
+								</div>
+							</div>
+							<div class="gh_tabs_pane" role="tabpanel" id="expired">
+								<div id="expiredBox" class="expiredBox gh_clearfix"></div>
+								<div class="gh_tcdPageCode expired gh_mt30" style=""></div>
+								<div class="gh_noDataTips gh_none" id="expired-noRecord">
+									<div class="gh_noDataTips_coupon gh_icons"></div>
+									<p class="gh_norecord">暂无优惠券~</p>
+								</div>
+							</div>
+						</div>
+  					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<!--内容弹窗-->
+		<div class="gh_modal gh_fade pc_modal_out" id="content-box" tabindex="-1" role="dialog" data-backdrop="static">
+			<div class="gh_modal_dialog gh_modal_sm gh_tcenter">
+				<div class="gh_icons gh_modal_close" data-dismiss="modal"></div>
+				<div class="gh_modal_content">
+					<div class="gh_modal_title">提示</div>
+					<div class="gh_lh24 gh_c2 gh_f14"><p class="gh_tcenter" id="content">暂无体验金产品</p></div>
+					<div class="gh_mt18">
+						<span class="gh_btn gh_btn_blue gh_btn_md gh_modal_cancel">关闭</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<script id="account-myCoupon-template" class="mustache-template" type="text/template">
+			{{#coupons}}
+			<div class="gh_fl coupon_list_ul gh_tcenter">
+				{{#redPackets}}
+					<div class="gh_f15 gh_c0">
+						{{#used}}{{unit}}{{/used}}
+						<span class="gh_f40">{{amountDisp}}</span>
+					</div>
+				{{/redPackets}}
+				{{^redPackets}}
+					<div class="gh_f15 gh_c0">{{unit}}<span class="gh_f40">{{amount}}{{percent}}</span></div>
+				{{/redPackets}}
+				<div class="gh_f14 mt5 gh_c0">
+					{{typeDisp}}
+					{{^redPackets}}
+					【<span class="gh_f12">{{investAmountDisp}}</span>】
+					{{/redPackets}}
+				</div>
+				
+				<div class="gh_mt5 gh_c0 gh_f12 ">{{validPeriodDisp}}&nbsp;</div>
+				<div class="gh_mt5 gh_c9 gh_f12">{{finish}}截止</div>
+				<div class="gh_mt15 " style="border-bottom:1px dotted #eee;"></div>
+				
+				<div class="gh_mt15 gh_f12 gh_tleft gh_c0">
+					<p>{{#rules}}规则：{{rules}} {{/rules}}&nbsp;</p>
+					<p class="gh_line_overflow">{{#products}}适用产品：<span title="{{products}}">{{products}}</span>{{/products}}&nbsp;</p>
+					<p>卡券来源：{{eventType}} </p>
+					<p>发放日期：{{leadTime}}</p>
+				</div>
+				{{#enable}}
+					<button class="gh_mt15 f_cf gh_btn gh_btn_sm gh_btn_orange gh_f14 coupon_used {{status}}_{{type}}" data-id="{{couponId}}" data-amount = "{{amount}}" data-amountType = "{{amountType}}">{{btnTxt}}</button>
+				{{/enable}}
+				{{^enable}}
+					<div class="coupon_icon gh_used gh_none">
+						<img src="static/images/account_coupon_used_2x.png" alt="" />
+					</div>
+					<div class="coupon_icon gh_expired gh_none">
+						<img src="static/images/account_coupon_expired_2x.png" alt="" />
+					</div>
+				{{/enable}}
+			</div>
+			{{/coupons}}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+/*
+ Title:GH登录注册相关样式
+ Author:cuixu
+ Version:v1.0
+ Date:2017-11-8
+*/
+@import url('public/base.css');
+@import url('public/common.css');
+
+
+/*========忘记登录密码\find-pwd.html=========*/
+.findpwd_container{
+	padding-left: 0;
+	padding-right: 0;
+	width: 1100px;
+	height: 475px;
+	margin: 60px auto 40px;
+	text-align: center;
+}
+.findpwd_steps_box{
+	width: 800px;
+	margin:auto;
+	padding: 85px 235px 0;
+}
+.findpwd_steps_box .one{
+	width: 15%;
+	float: left;
+}
+.findpwd_steps_box .two{
+	width: 13%;
+	float: left;
+}
+.findpwd_steps_box .three{
+	width: 17%;
+	float: left;
+}
+.findpwd_steps{
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	position: relative;
+	top: 2px;
+}
+.findpwd_steps_box .one.on .findpwd_steps,.two.on .findpwd_steps,.three.on .findpwd_steps{
+	line-height: 40px;
+}
+.step_tips{
+	font-size: 14px;
+	text-align: center;
+}
+.findpwd_steps_box .one.on .step_tips,.two.on .step_tips,.three.on .step_tips{
+	font-weight: 600;
+}
+.findpwd_img_one{
+	width: 114px;
+	margin-top: 14px;
+	margin-left:10px;
+	float: left;
+}
+.findpwd_img_two{
+	float: left;
+	width: 147px;
+	margin-top: 14px;
+	margin-left:10px;
+}
+.findpwd_img_one img,.findpwd_img_two img{
+	width: 100%;
+}
+.findpwd_steps_content{width: 630px;margin:60px auto 0px;padding:0px 235px 80px;float: left;}
+.findpwd_steps_content .steps_content{display: none;}
+.findpwd_steps_content .steps_content.on{display:block;}
+.steps_content .gh_tleft .gh_btn{padding: 0px;height: 48px;line-height: 48px;font-size: 20px;margin-left: 110px;}
+.steps_content .gh_tcenter .gh_btn{height: 48px;line-height: 48px;padding: 0;font-size:20px;}
+.steps_content .success_result_img{width: 98px;height: 98px;margin: auto;}
+.steps_content .success_result_img img{width: 100%;}
+.find_pwd_tips{position: relative; top: -78px;width: 500px;text-align: left;margin-left: 150px;}

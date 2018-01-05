@@ -1,0 +1,191 @@
+<!-- Modal -->
+<div class="gh_modal" id="bindCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_lg modal_risktesting">
+		<div class="gh_modal_content" id="addCard">
+			<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+			<div class="gh_mb30 gh_f20"><b>绑定银行卡</b></div>
+			<div class="gh_modal_body">
+				<!--<ul class="bank_list_logo clearfix" id="bankList" style="min-height: 70px;">
+					<div class="list_tips mt20" align="center">加载中...</div>
+				</ul>-->
+				<div class="gh_c6" id="bindCardForm">
+					<div class="gh_row">
+						<p class="gh_c9"><span class="gh_cred">*</span> 为保证资金安全,国槐理财平台限绑定一张银行卡,资金同卡进出,确保资金仅能提现至用户本人银行卡。</p>
+					</div>
+					<div class="gh_row gh_mt20"  id="userInfForm">
+						<div class="gh_form_group">
+							<label>真实姓名： </label>
+							<input type="text" class="form_input" style="width:320px;" id="realName_bc" placeholder="" valid='{"required":true,"tipsbox":"#app_tips_bindcard","msg":"提示： 真实姓名","realName":true}' />
+						</div>
+						<div class="gh_form_group">
+							<label>身份证号： </label>
+							<input type="text" id="idCard" class="form_input" maxlength="18" placeholder="" valid='{"required":true,"tipsbox":"#app_tips_bindcard","msg":"提示： 身份证号","identityCard":true}' />
+						</div>
+					</div>
+					<hr></hr>
+					<div class="gh_row gh_mt20" id="userBankInfoForm">
+						<div class="gh_form_group">
+							<label>选择银行： </label>
+							<p  class="gh_choose_bank" id="chooseBank">选择银行卡</p>
+						</div>
+						<div class="gh_form_group" id="cardBox">
+							<label>银行卡号： </label>
+							<input type="text" class="form_input" id="cardNum" maxlength="19" placeholder="" valid='{"required":true,"tipsbox":"#app_tips_bindcard","msg":"提示：银行卡号","debitCard":true}' />
+						</div>
+						<div class="gh_form_group">
+							<label>银行预留手机号： </label>
+							<input type="text" class="form_input" maxlength="11" id="bankPone" placeholder="" valid='{"required":true,"tipsbox":"#app_tips_bindcard","msg":"提示： 银行预留手机号","mobilePhone":true}' />
+						</div>
+						<div class="gh_form_group verifyCode">
+							<label>验证码: </label>
+							<input type="text" value="" maxlength="6" id="bank_verifyCode" placeholder="" valid='{"required":true,"tipsbox":"#app_tips_bindcard","msg":"提示： 验证码","finalLength":6,"positiveInteger":true,"finalLength":6}' />
+							<a href="javascript:void(0);" class="gh_verifyCode" id="card_verifyCode">获取验证码</a>
+						</div>
+
+						<div class="gh_row gh_tcenter">
+							<div class="bindcard-agreement gh_f14 gh_c9">
+								<span class="gh_input_check gh_icons active gh_mt10" id="bankCard_protocolCheck">&nbsp;</span>我已阅读并同意
+								<a href="javascript:;" class="protocol a-blue" data-typeId="BANK" data-tips="#app_tips_bindcard">《国槐科技代扣协议》</a>
+							</div>
+							<div class="gh_cred gh_mt15" id="app_tips_bindcard"></div>
+							<div class="gh_btn gh_btn_blue gh_btn_md" id="bindCard">绑定银行卡</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gh_modal" id="bankCardListModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_lg">
+		<div class="gh_modal_content validate">
+			<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+			<div class="gh_tleft gh_f18">银行卡列表</div>
+			<div class="gh_modal_body">
+				<ul class="gh_bank_list_logo clearfix" id="bankList" style="min-height: 70px;">
+					<div class="list_tips mt20" align="center">加载中...</div>
+				</ul>
+				<div class="validate_modal_hr"></div>
+				<div class="gh_row gh_mt20">
+					<div class="gh_col_12 gh_tcenter">
+						<h5 id="app_tips_bankCardList" style="color: red;"></h5>
+					</div>
+				</div>
+				<div class="gh_row gh_tcenter">
+					<div class="gh_btn gh_btn_md gh_btn_blue" id="nextStep">下一步</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<!--<div class="modal fade" id="unbindCardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content none" id="unBindCard">
+			<div class="modal-header" style="border: none;">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			</div>
+			<div class="modal-body content_2">
+				<p class="modal-title f_16 f_c6" id="">解除绑定银行卡</p>
+				<p class="f_c9 f_12 mt20"><span class="f_c_note">*</span> 资金转入和转出时使用,以保障资金安全</p>
+				<div class="row">
+					<div class="col-xs-3 text-left product0_div">手机号码：</div>
+					<div class="col-md-9 product0_div" style="margin-top:7px;margin-left:-10px;" id="removeBankCard_phone"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2 text-right product0_div mt10" style="width:70px;">验证码：</div>
+					<div class="col-xs-5 checkNum product0_div" id="removeCardBox">
+						<input id="verifyCodeNo" class="form_input f_12" type="text" valid='{"required":true,"tipsbox":"#app_tips_unBindCard", "msg":"提示：验证码","positiveInteger":true,"finalLength":6}'  maxlength="6" placeholder="" oninput="GHutils.checkInput(this,5)" />
+					</div>
+					<div class="col-xs-5 getCheckInput" id="removeBankCard_verfyCode">获取验证码</div>
+					<h5 class="form_tips_box tl " id="app_tips_unBindCard" style="color: red;margin-top:53px;margin-left:66px;">&nbsp;</h5>
+				</div>
+				
+				<div class="row tc mt0">
+					<p class="normal-button" id="removeCard">确认解绑</p>
+				</div>
+			</div>
+		</div>
+		<div class="modalBox none" id="tieUpbkCardTipBox">
+				<div class="modal-header" style="border: none;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body content_2 mt50">
+					<div class="row mb10">
+						<div class="attention-img">
+							<img src="../static/images/attention.png"/>
+						</div>
+					</div>
+					<div class="row tc p1 plr68">
+						<p class="f_w">重要提示</p>
+						<p class="pt20 f_14 f_c6">为保证你的账户资金安全,需先转出账户活期/定期/余额资金,再进行绑除银行卡绑定操作。</p>
+					</div>
+					<div class="row tc mb20">
+						<a href="javascript:;" class="normal-button" id="assessRightNow">
+							立即评估
+						</a>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>-->
+
+<!--解绑银行卡tieUpbkCard-->
+<!--<div class="modal fade bs-example-modal-md" id="tieUpbkCard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="modal-dialog fromModel modal-md">
+		<div class="modal-content pwd-modal">			
+			<div class="modalBox none" id="tieUpbkCardSureBox">
+				<div class="modal-header" style="border: none;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body content_2">
+					<p class="modal-title f_16 f_c6" id="">解除绑定银行卡</p>
+					<p class="f_c9 f_12 mt20"><span class="f_c_note">*</span> 资金转入和转出时使用,以保障资金安全</p>
+					<div class="row mb10">
+						<div class="col-xs-3 tr">手机号码：</div>
+						<div class="col-xs-9">
+							<input id="phoneNum_input" type="text" class="form_input no_border" triggerId="#modify_pay_pwd" maxlength="11" readonly="readonly" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3 tr">验证码：</div>
+						<div class="col-xs-9">
+							<input id="verifyCodeNo" type="text" class="form_input" style="width:130px;" autocomplete="off" placeholder="" valid='{"required":true,"tipsbox":"#forget_pay_tips","msg":"提示：验证码","positiveInteger":true}' triggerId="#modify_pay_pwd" maxlength="6" oninput="GHutils.checkInput(this,5)" />
+							<button id="vericode_btn" class="a-blue popup-btn">获取验证码</button>
+						</div>
+					</div>
+					<div class="row tc mb20">
+						<a href="javascript:;" class="normal-button" id="tieUpbkCardSureBtn">
+							确认解绑
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="modalBox none" id="tieUpbkCardTipBox">
+				<div class="modal-header" style="border: none;">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body content_2 mt50">
+					<div class="row mb10">
+						<div class="attention-img">
+							<img src="../static/images/attention.png"/>
+						</div>
+					</div>
+					<div class="row tc p1 plr68">
+						<p class="f_w">重要提示</p>
+						<p class="pt20 f_14 f_c6">为保证你的账户资金安全,需先转出账户活期/定期/余额资金,再进行绑除银行卡绑定操作。</p>
+					</div>
+					<div class="row tc mb20">
+						<a href="javascript:;" class="normal-button" id="assessRightNow">
+							立即评估
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>-->
+
+<div template-href='protocol'></div>

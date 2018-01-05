@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>活期-国槐金融</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/product.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+	        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+	    <![endif]-->
+		<!--[if lte IE 8]>
+	        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	     <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/product-t0-list.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="product-t0" class="gh_bgf">
+		<div template-href='header' data-navname="product-t0" id="header-box"></div>
+		
+		<div class="gh_builder gh_none" id="badRequest">
+			<img src="static/images/img_builder.jpg"/>
+			<p class="gh_f18 gh_c6 gh_mt20">当前网络错误，请稍后 <a href="javascript:;" class="gh_cmain">重试</a> 。</p>
+		</div>
+		
+		<div class="product_tn_banner gh_none">
+			<img src="static/images/product_tn_banner_bg.jpg" class="product_tn_banner_bg"/>
+			<img src="static/images/product_tn_banner_txt.png" class="product_tn_banner_txt"/>
+		</div>
+		<div class="product_tnlist_content gh_clearfix gh_none">
+			<!-- 定期产品列表-->
+			<div class="gh_noDataTips gh_mt30 gh_none" id="t0-list-noRecord">
+				<div class="gh_noDataTips_activity gh_icons"></div>
+				<p class="gh_norecord">暂无数据~</p>
+			</div>
+			<div class="product_tnlist gh_clearfix" id="t0-list-container">
+				<ul class="tn_list gh_fl gh_pb45" id="t0-list"></ul>
+			</div>
+			<div class="gh_tcdPageCode gh_none">
+			</div>
+		</div>
+		<script id="product-t0-list-template" class="mustache-template" type="text/template">
+				{{#prodT0List}}
+				<li>
+					<div class="gh_row">
+						<div class="gh_f16 gh_c2 gh_mb5 gh_line_overflow">{{name}}
+							{{#labelList}}  
+								{{#freshman}}<span class="gh_tag_general gh_icon_tag gh_ml10">{{.}}</span>{{/freshman}}
+								{{#general}}<span class="gh_tag_general gh_icon_tag gh_ml10">{{.}}</span>{{/general}}
+								{{#extend}}<span class="gh_tag_extend gh_icon_tag gh_ml5">{{.}}</span>{{/extend}}
+							{{/labelList}}
+						</div>
+					</div>
+					<div class="gh_row gh_mt10">
+						<div class="gh_w27p gh_fl">
+							<p class=" gh_f24 gh_crate gh_line_overflow">{{expArrorDisp}}</p>
+							<p class="gh_f14 gh_c9 gh_mt8">预期年化收益率</p>
+						</div>
+						<div class="gh_w13p gh_fl gh_mt5">
+							<p class="gh_f20 gh_c2 gh_line_overflow">{{investMin}}</p>
+							<p class="gh_c9 gh_mt8">起投金额 (元)</p>
+						</div>
+						<div class="gh_w16p gh_fl gh_mt5 ">
+							<p class="gh_f20 gh_c2 gh_line_overflow">{{tenThousandIncome}}</p>
+							<p class="gh_c9 gh_mt8">万元收益(元)</p>
+						</div>
+						<div class="gh_w13p gh_fl gh_mt5 gh_line_overflow">
+							<p class="gh_f20 gh_c2">{{incomeDealType}}</p>
+							<p class="gh_c9 gh_mt8">计息方式</p>
+						</div>
+						{{#gobuy2}}
+							<div class="gh_w31p gh_tright gh_fl">
+								{{#notSale}}
+								<span class="t0ProductInfo gh_btn gh_btn_md gh_btn_disabled" data-oid="{{productOid}}" style="width: 192px;position: relative;bottom: 15px;">{{text}}</span>
+								{{/notSale}}
+								{{#sale}} 
+									<span class="t0ProductInfo gh_btn gh_btn_md gh_btn_orange" data-oid="{{productOid}}" style="width: 192px;position: relative;bottom: 15px;">{{text}}</span>
+								{{/sale}}	
+							</div>
+						{{/gobuy2}}
+					</div>
+				</li>
+				{{/prodT0List}}
+		</script>
+		<div template-href='footer' class="gh_footer_gary"></div>
+		<div template-href='custom-service'></div>
+		<!--内容弹窗-->
+		<div class="gh_modal gh_fade" id="content-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="gh_modal_dialog gh_modal_sm">
+				<div class="gh_modal_content">
+					<div class="gh_modal_header">
+						<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+						<p class="gh_modal_title" id="title">p提示</p>
+					</div>
+					<div class="gh_modal_body" id="content"><span id="prodStatus"></span></div>
+					<div class="gh_modal_footer">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

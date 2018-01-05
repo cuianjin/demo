@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>国槐科技-基线网页展示版</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="国槐科技">
+		<meta name="description" content="国槐科技">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/usermgmt.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+	        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+	    <![endif]-->
+		<!--[if lte IE 8]>
+	        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/swiper-3.3.1.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/GHredPackets.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body>
+		<!-- 以下代码防止谷歌等浏览器自动填充 {-->
+		<div style="width: 0;overflow: hidden;height: 0;">
+			<input style="width: 0;opacity: 0;" type="text" name="name" />
+			<input style="width: 0;opacity: 0;" type="password" name="password" autocomplete="new-password" />
+		</div>
+		<!--}-->
+		<div class="gh_navbar_top">
+			<div class="gh_navbar_inner">
+				<div class="gh_warp">
+					<div class='gh_col_12'>
+						<div class="gh_col_3 gh_header_logo">
+							<a href="index.html">
+		            			<img src="static/images/logo.png" alt="国槐科技" title="国槐科技">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gh_login_bg">
+			<img src="static/images/big_banner_bg.jpg" class="login_banner_bg"/>
+			<div class="gh_warp gh_pr">
+				<img src="static/images/big_banner_txt.png" class="login_banner_txt"/>
+				<div class="gh_register_box">
+					<ul id="myTab">
+						<li class="gh_cmain"><b>注册为国槐会员</b></li>
+					</ul>
+					<div id="myTabContent" class="gh_register_content">
+						<div class="register-input gh_popup_cotaint" id="registerForm">
+							<div id="register_getVerifyCode_container" class="form-group">
+								 <span class="gh_icon_phone gh_icons"></span>
+								<input id="register_userPhone" class="form-control inputBindKey " data-trigger="#registerSubmit" name="" placeholder="请输入手机号" maxlength="11" type="text" valid='{"required":true,"tipsbox":"#register_errorMessage","msg":"提示： 手机号","mobilePhone":true}'>
+							</div>
+							<div class="form-group gh_verifyCode_group">
+								<span class="gh_icon_locker gh_icons"></span>
+								<input id="regist_verifyCode" class="form-control inputBindKey " data-trigger="#registerSubmit" name="verifyCode" placeholder="请输入验证码" maxlength="6" type="text" valid='{"required":true,"tipsbox":"#register_errorMessage","msg":"提示： 验证码","positiveInteger":true,"finalLength":6 }' autocomplete="off">
+								<span id="register_getVerifyCode" class="gh_cmain gh_f14 gh_veribtn">获取验证码</span>
+							</div>
+							<div class="form-group">
+								<span class="gh_icon_locker gh_icons"></span>
+								<input id="register_userPassword" class="form-control inputBindKey" data-trigger="#registerSubmit" name="" placeholder="请设置密码，6-16位数字与字母组合" maxlength="16" type="password" valid='{"required":true,"tipsbox":"#register_errorMessage","msg":"提示： 登录密码","passWord":true}'>
+							</div>
+							<div class="gh_f12">
+								<span class="gh_input_check gh_icons gh_icons active" id="protocolCheck">&nbsp;</span>我已阅读并同意
+								<a href="javascript:;" class="gh_tcenter gh_c2 protocol" data-typeId="REGISTPLATFORM" data-tips="#register_errorMessage">《国槐科技服务协议》</a>
+							</div>
+							<p class="gh_mt10 gh_f12 gh_cf0" id="register_errorMessage">&nbsp;</p>
+							<button id="registerSubmit" class="gh_btn gh_btn_lg gh_btn_blue loading" type="button">注册</button>
+							<a href="javascript:;" class="">
+								<div class="gh_mt20 gh_f14 gh_c4 gh_tcenter toLogin">已有国槐账号？ 立即登录→</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script id="registerCoupon-template" type="text/template" class="mustache-template">
+			{{#coupons}}
+			<li class="col-xs-12 finish_registerli">
+				<div class="col-xs-4 apply_coupon_percent product0_div text-center">
+					<p class="f_24 f_cred mt20">{{amount}}<span class="f_14">{{unit}}</span></p>
+					<span class="f_14 mt5">{{typeDisp}}</span>
+				</div>
+				<div class="col-xs-6 apply_coupon_rules f_c9 f_12 product0_div ml10 mt10">
+					<p>{{investAmountDisp}}可用</p>
+					<p class="mt10">{{durationPeriodDisp}}</p>
+					<!--<p class="mt10"></p>
+					<p class="pt5">2017-01-01 00:00:00截止</p>-->
+				</div>
+			</li>
+			{{/coupons}}
+		</script>
+		<div template-href='footer'></div>
+		<div template-href='user-center' template-onlyJs="true"></div>
+		<div template-href='protocol'></div>
+		<div class="gh_modal"></div>
+		<!--注册成功弹窗-->
+		<div class="gh_register_modal" id="registerSuccess" tabindex="-1" role="dialog" data-backdrop="static">
+			<div class="gh_register_dialog">
+				<div class="gh_reg_success gh_icons"></div>
+				<div class="gh_f16 gh_mt20 gh_c2"><b>您已经注册成功</b></div>
+				<div>
+					<a href="account.html" class="gh_cmain gh_mr5" id="pc_complete_go">去用户中心</a>
+					<a href="javascript:;" class="gh_cf" id="toInvestPrepare">开始投前准备</a>
+				</div>
+			</div>
+		</div>
+		<!-- 注册成功 -->
+		<!--<div class="apply-c-div modal fade in" id="registerSuccess" tabindex="-1" role="dialog" data-backdrop="static" style="">
+			<div class="modal-dialog finish_register">
+				<img src="static/images/finish_register.png" class="finishfirstbg" />
+				<div id="loginClose" class="popup-close" data-dismiss="modal">
+					<img src="static/images/register_close.png" id="register_close" alt="关闭">
+				</div>
+				<h2 class="finish_registerh5">注册成功</h2>
+				<div>
+					<ul class="finish_registerticket finish_registerul">
+						<div class="finish_register_coupons scroll clearfix" id="registerCoupon">
+							<li class="col-xs-12 finish_registerli">
+						      		<div class="col-xs-4 apply_coupon_percent product0_div text-center">
+						      			<p class="f_24 f_cred mt20">5.28<span class="f_14">%</span></p>
+						      			<span class="f_14 mt5">加息券</span>
+						      		</div>
+						      		<div class="col-xs-6 apply_coupon_rules f_c9 f_12 product0_div ml10 mt10">
+						      			<p >投资满100元使用</p>
+						      			<p class="mt10">自使用日起加息15天</p>
+						      		</div>	
+								</li>
+								<li class="col-xs-12 finish_registerli">
+						      		<div class="col-xs-4 apply_coupon_percent product0_div text-center">
+						      			<p class="f_24 f_cred mt20">5.28<span class="f_14">%</span></p>
+						      			<span class="f_14 mt5">加息券</span>
+						      		</div>
+						      		<div class="col-xs-6 apply_coupon_rules f_c9 f_12 product0_div ml10 mt10">
+						      			<p >投资满100元使用</p>
+						      			<p class="mt10">自使用日起加息15天</p>
+						      		</div>	
+								</li>
+						</div>
+					</ul>
+				</div>
+				<span class="finish_register_tip">您已经获得以上卡券，卡券到账时间会有延迟，请稍后去我的优惠券中查看</span>
+				<div class="finish_registerlastbg">
+					<button class="finish_registerbtn">立即查看</button>
+					<span class="finish_registerlastfont">说明：实际优惠券最终到账为准,本项目最终解释权归国槐金融资产交易市场股份有限公司所有。</span>
+				</div>
+			</div>
+		</div>-->
+	</body>
+</html>

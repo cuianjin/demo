@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>交易结果-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/deal.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<!--<script src="static/js/public/bootstrap.min.js"></script>-->
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/GHredPackets.js"></script>
+		<script src="static/js/product-result.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="index" class="gh_bgbody login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<!--结果加载中-->
+		<div class="content_result_box gh_none" id="loading">
+			<div class="gh_row">
+				<img src="static/images/loading.gif" alt="加载_国槐科技" width="200px"/>
+
+				<p class="gh_mt20 gh_f20">正在处理中，请稍后！
+					<em></em>
+				</p>
+				<div class="gh_mt25 gh_none">如有任何疑问，请联系<span class="hotline"></span></div>
+				<div class="gh_mt25 hotlineReplace gh_none">如有任何疑问，请联系客服</div>
+			</div>
+		</div>
+		<!--等待结果页面-->
+		<div class="content_result_box gh_none" id="waiting">
+			<div class="gh_row">
+				<div class="result_waiting_img gh_icons">
+					
+				</div>
+				<p class="result_title">等待返回结果中…</p>
+				<p class="gh_c2 gh_mt30">暂未查到信息，您可以至个人中心查看<span id="waiting-title"></span>结果</p>
+				<button class="gh_btn gh_btn_blue gh_btn_outline gh_btn_md account">查看我的账户</button>
+			</div>
+		</div>
+		<!--产品申购已提交   活期成功提交-->
+		<div class="content_result_box gh_none" id="investSuccess">
+			<div class="gh_row gh_none gh_clearfix" id="investSuccess2">
+				<div class="success_result_img gh_icons"></div>
+				<p id="result_title" class="gh_f20 gh_c2"></p>
+				<div class="gh_row gh_clearfix gh_mt30">
+					<div class="gh_col_5 gh_tright">
+						<div class="result_circle active"></div>
+						<div class="result_line"></div>
+					</div>
+					<div class="gh_col_7 result_border_box gh_mb30" id="success-item"></div>
+				</div>
+				<div class="gh_row gh_clearfix">
+					<div class="gh_col_5 gh_tright">
+						<div class="result_circle"></div>
+					</div>
+					<div class="gh_col_7 result_border_box">
+						<div>开始计算收益<span class="gh_c9 gh_ml10" id="beginInterestDate">--</span></div>
+					</div>
+				</div>
+				<div class="gh_row gh_tcenter">
+					<a href="account.html">
+						<button class="gh_btn gh_btn_blue gh_btn_outline gh_btn_md gh_mr15 account">查看我的账户</button>
+					</a>
+					<a  href="product-tn-list.html">
+						<button class="gh_btn gh_btn_orange gh_btn_md" id="goInvest">继续投资</button>
+					</a>
+				</div>
+			</div>
+			<!--转入失败-->
+			<div class="gh_row gh_none" id="invest_failed">
+				<div class="result_title_img">
+					<div class="error_result_img gh_icons"></div>
+				</div>
+				<div class="result_title">转入失败</div>
+				<div class="result_content">
+					<p id="invest_failedMessaage"></p>
+					<p class="gh_none">很遗憾，您的购买失败，如有任何疑问，请联系<span class="hotline"></span></p>
+					<p class="hotlineReplace gh_none">很遗憾，您的购买失败，如有任何疑问，请联系客服</p>
+				</div>
+				<a href="account-deposit.html">
+					<button class="gh_btn gh_btn_orange gh_btn_md" id="tran_angin">重新转入</button>
+				</a>
+			</div>
+			<div class="gh_row gh_none" id="invest_waiting">
+				<div class="result_waiting_img gh_icons">
+				</div>
+				<p class="result_title">订单已经提交，您可至个人中心查看申购结果</p>
+				<button class="gh_btn gh_btn_blue gh_btn_outline gh_btn_md account">返回个人中心</button>
+			</div>
+		</div>
+		<!--赎回-->
+		<div class="content_result_box gh_none" id="redeem">
+			<!--赎回成功-->
+			<div class="gh_row gh_none gh_clearfix" id="redeemSuccess">
+				<div class="success_result_img gh_icons"></div>
+				<div class="result_title">转出成功</div>
+				<div class="redeem_box gh_mt15 gh_row">
+					<div class="gh_col_5">&nbsp;</div>
+					<div class="gh_col_4 gh_tleft gh_pl50">
+						<div>转出金额：<b><span class="gh_crate" id="redeemMoney">--</span></b>元</div>
+						<div class="gh_mt5">转出时间：<span id="redeemTime">--</span></div>
+						<div class="gh_mt5">预计到账时间：<span id="redeemArriveTime">--</span></div>
+					</div>
+					<div class="gh_col_2">&nbsp;</div>
+				</div>
+				<div class="gh_row gh_tcenter">
+					<button class="gh_btn gh_btn_md gh_btn_blue gh_btn_outline account">完成</button>
+				</div>
+			</div>
+			<!--赎回失败-->
+			<div class="gh_row gh_none" id="redeem-failed">
+				<div class="result_title_img">
+					<div class="error_result_img gh_icons"></div>
+				</div>
+				<div class="result_title">转出失败</div>
+				<div class="gh_row gh_tcenter">
+					<a href="javascript:;" class="gh_btn gh_btn_orange gh_btn_md" id="toRedeem">重新赎回</a>
+				</div>
+			</div>
+		</div>
+		<!-- 提现订单已提交 -->
+		<div class="content_result_box  gh_none withdrawSuccess_new" id="withdraw">
+			<div class="gh_row gh_clearfix">
+				<div class="success_result_img gh_icons"></div>
+				<div class="result_title">提交成功</div>
+				<div class="gh_row gh_tcenter gh_mt30">
+					<div class="gh_col_5">
+						<div class="result_circle active"></div>
+						<div class="result_line"></div>
+					</div>
+					<div class="gh_col_7 result_border_box" id="success-item">
+						<!--<i class="result_box_icon"></i>-->
+						<p class="gh_mt5 gh_mb5">提现金额：<span class="em withdraw-money">--</span>元 <span class="gh_c9 gh_f12 gh_ml10">提现时间：<span id="withdraw-time">--</span></span></p>
+					</div>
+				</div>
+				<div class="gh_row gh_clearfix gh_mt10">
+					<div class="gh_col_5">
+						<div class="result_circle gh_mt30"></div>
+					</div>
+					<div class="gh_col_7 result_border_box gh_mt25" id="success-item">
+						<!--<i class="result_box_icon"></i>-->
+						<p class="gh_mt5">到账金额：<span id="restMoney">--</span>元<span class="gh_c9 gh_f12 gh_ml10">手续费：<span id="fee">--</span>元</span></p>
+						<div class="gh_f12 gh_c9 gh_mt10">预计到账时间：<span>1-2个工作日内</span></div>
+					</div>
+				</div>
+				<div class="gh_row gh_tcenter gh_mt20">
+					<a class="gh_ml50"  href="account.html">
+						<button class="gh_btn gh_btn_blue  gh_btn_outline gh_btn_md account">完成</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--充值-->
+		<div class="content_result_box  withdrawSuccess_new gh_none" id="deposit">
+			<!--充值成功-->
+			<div class="gh_row gh_none gh_clearfix" id="deposit-success">
+				<div class="success_result_img gh_icons"></div>
+				<div class="result_title">您已充值成功</div>
+				<div class="result_content">充值到账<span class="em f_c66" id="deposit-money"></span> 元</div>
+				<div class="gh_row gh_tcenter">
+					<a href="account.html">
+						<button class="gh_btn gh_btn_blue gh_btn_outline gh_btn_md gh_mr15 account">查看我的账户</button>
+					</a>
+					<a  href="product-tn-list.html">
+						<button class="gh_btn gh_btn_orange gh_btn_md" id="goInvest">前去投资</button>
+					</a>
+				</div>
+			</div>
+			<!--充值失败-->
+			<div class="gh_row gh_none" id="deposit-failed">
+				<div class="success_result_img gh_icons"></div>
+				<div class="result_title">等待返回结果中…</div>
+				<div class="result_content">暂未查到信息，您可以至个人中心查看充值结果</div>
+				<div class="gh_row gh_tcenter">
+					<a href="account.html">
+						<button class="gh_btn gh_btn_blue  gh_btn_outline gh_btn_md account">返回我的账户</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+		<div class="gh_modal"></div>
+	</body>
+</html>

@@ -1,0 +1,306 @@
+/*
+ Name:GH其他页面样式
+ Author:cuixu
+ Version:v1.0
+ Date:2017-11-8
+*/
+@import url('public/base.css');
+@import url('public/common.css');
+
+
+/*========常见问题/problems.html========*/
+.problems_list{padding-top: 15px;}
+.problems_list li{padding-bottom: 20px;margin-bottom: 25px;}
+.problems_list li h5{font-weight: 700;padding-bottom:0;margin-top: 0;margin-bottom: 5px;}
+.problems_list li p{line-height: 20px;line-height: 24px;}
+
+/*========安全保障/safety.html========*/
+.safety_box{
+	height: 1370px;
+    width: 900px;
+    margin:60px 0px 40px;
+    overflow: hidden;
+    padding:58px 100px;
+}
+.safety_border_grap{
+	height: 1px;
+    width: 905px;
+    float: left;
+    margin-top: 58px;
+    margin-bottom: 58px;
+}
+.feature_img{
+    width: 265px;
+    height: 254px;
+}
+.feature_img.one{
+	background: url(../images/gh_pc_images.png) no-repeat;
+    background-position: 0px -808px;
+}
+.feature_img.two{
+	background: url(../images/gh_pc_images.png) no-repeat;
+    background-position:-319px -808px;
+}
+.feature_img.three{
+	background: url(../images/gh_pc_images.png) no-repeat;
+    background-position:0px -1069px;
+}
+.feature_img.four{
+	background: url(../images/gh_pc_images.png) no-repeat;
+    background-position:-319px -1069px;
+}
+/*========平台公告/notice.html========*/
+.notice_box{
+	height: 615px;
+	margin: 60px auto 40px;
+	padding: 27px 51px;
+	}
+.notice_ul li {
+	line-height: 50px;
+}
+.message_title {
+	overflow: hidden;
+	width: 100%;
+	cursor: pointer;
+}
+
+.message_title .title {
+	width: 90%;
+	float: left;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.message_title .date {
+	float: right;
+	font-size: 14px;
+}
+
+
+/*========邀请有礼/invite.html========*/
+.invite_box_bg {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/pc_invite_bg.jpg) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.invite_box {
+    width: 960px;
+    margin: 32px auto;
+    margin-bottom: 71px;
+}
+.invite_title {
+    margin-top: 229px;
+    margin-bottom: 85px;
+    width: 475px;
+    height: 235px;
+}
+.invite_logobag {
+    width: 560px;
+    height: 517px;
+    position: absolute;
+    top: 96px;
+    right: 17%;
+}
+.invite_title img, .invite_logobag img {
+    width: 100%;
+}
+.invite_rules_box {
+    opacity: 0.88;
+    border-radius: 10px;
+    width: 860px;
+    padding: 24px 45px;
+    position: relative;
+}
+.invite_rules_box .invite_line {
+    position: absolute;
+    display: inline-block;
+    opacity: 0.06;
+    filter:alpha(opacity=10);
+    width: 370px;
+    height: 1px;
+}
+.invite_rules_box .invite_line.left {
+    top: 39px;
+    left: 45px;
+    margin-right: 16px;
+}
+.invite_rules_box .invite_line.right {
+    top: 39px;
+    right: 45px;
+    margin-left: 15px;
+}
+.invite_rules_box.share {
+    opacity: 0.88;
+    padding: 40px 6px;
+    width: 938px;
+}
+.step_title{font-size: 20px;float: left;width: 100%;}
+.step_title span{font-size: 14px;margin-left: 10px;}
+.share_botton_gologin {
+    display: inline-block;
+    border-radius: 100px;
+    width: 74px;
+    height: 34px;
+    line-height: 34px;
+    font-weight: 400;
+}
+.share_myinvite, .share_invitechart {
+    border-radius: 10px;
+    padding: 15px 20px;
+    width: 425px;
+    height: 373px;
+    float: left;
+}
+.share_myinvite_title{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 8px;
+}
+.share_myinvite .share_botton_gologin{
+	float: left;
+	font-size: 14px;
+	margin-top: 25px;
+	margin-left: 170px;
+}
+.share_myinvite_list{
+	height: 30px;
+    line-height: 30px;
+}
+
+/*========媒体报道/account-newlist.html========*/
+.newlist_box{
+	margin:60px auto 40px;
+	}
+.newlist_content_box{
+	margin:60px auto 40px;
+	padding: 27px 51px;
+	text-align: center;
+	position: relative;
+}
+.newlist_back{display: inline-block;border-radius: 4px;cursor: pointer;
+width: 50px;height: 35px;position: absolute;right: 50px;top: 10px;
+text-align: center;line-height: 35px;
+}
+.new-li {
+	height: 110px;
+	padding: 20px 0;
+}
+
+.new-img {
+	width: 186px;
+	height: 100px;
+	float: left;
+	overflow: hidden;
+}
+
+.new-img img {
+	width: 100%;
+}
+
+.new-text-md {
+	float: left;
+	margin-left: 33px;
+	width: 482px;
+}
+
+.new-text-rr {
+	float: right;
+	width: 100px;
+	text-align: right;
+}
+
+.new-title {
+	font-size: 16px;
+}
+
+.new-summary {
+	height: 35px;
+	overflow: hidden;
+	margin-top: 9px;
+	font-size: 12px;
+	text-align: left;
+	max-width: 403px;
+	position: relative;
+}
+
+.new-summary::after {
+	content: "...";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-left: 40px;
+}
+
+.new-time {
+	text-align: right;
+	margin-top: 12px;
+}
+
+
+/*========关于我们/aboutUs.html========*/
+
+.pc_about_companyhonor{
+	width:199px;
+	height: 266px;
+	float: left;
+}
+.pc_about_companyhonor img{width: 100%;}
+.about-map-box img {
+	width: 100%;
+	height: 100%;
+}
+/*main_padding*/
+.main_padding{padding: 30px 50px;}
+.mapbox{width: 998px;height: 396px;position: relative;margin:40px auto;}
+.mapbox_view{width: 998px;height: 396px;position: relative;}
+.map_tab{
+	width:390px;
+	height:240px;
+	padding: 20px 30px;
+	position: absolute;
+	top:50px;
+	right: 20px;
+	z-index: 2;
+}
+.map_tab_con{padding:20px 10px}
+.map_tab_con p{line-height: 30px;font-size: 14px;}
+
+.nav_title a{font-size: 16px;padding: 0 20px;height: 40px;display: inline-block;line-height: 40px;}
+.nav_title a.on{position: relative;top:1px;}
+
+.pc_border_grap{height: 1px;width: 905px;float: left;margin-left: 100px;}
+
+
+.aboutUs_div p {
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+.aboutUs_div1 p {
+	line-height: 28px;
+}
+
+.aboutUs_div1 span {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+
+/*========404/404.html========*/
+.other_404{
+	width: 100%;
+	height: 700px;
+	text-align: center;
+	/*margin-top: 45px;*/
+	/*box-shadow: 0px 1px 6px #d9d9d9 inset;*/
+}
+.other_404 img{
+	margin-top: 100px;
+	margin-bottom: 66px;
+	width: 730px;
+	vertical-align: middle;
+}

@@ -1,0 +1,1275 @@
+/*
+ Name:GH公共样式
+ Author:cuixu
+ Version:v1.0
+ Date:2017-11-8
+*/
+@charset "utf-8";
+/*=======默认样式=======*/
+body{
+	font-size: 14px;
+	color: #333;
+	background: #f9f9f9;	
+}
+body,input,button,select{
+	font-family: "Helvetica Neue",roboto,Arial,sans-serif,"Hiragino Sans GB","PingFang SC","Microsoft YaHei";
+}
+a{color: #333;}
+
+/*=======按钮=======*/
+/*基础按钮*/
+.gh_btn{
+	display: inline-block;
+    padding: 12px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius:5px;
+    margin-top: 20px;
+    background: #2d6fff;
+    color: #fff;
+}
+/*按钮大小*/
+.gh_btn_lg{width: 278px;font-size: 20px;}
+.gh_btn_md{width: 208px;font-size: 16px;line-height: 16px;}
+.gh_btn_sm{width: 128px;font-size: 16px;line-height: 16px;}
+.gh_btn_xs{width: 78px;padding: 8px 0;font-size: 14px;line-height: 14px;}
+
+/*蓝色*/
+.gh_btn_blue,
+.gh_btn_blue:focus{color:#fff;background: #3272ff;box-shadow:0 10px 10px 0 rgba(50,94,248,0.18);}
+.gh_btn_blue:active,
+.gh_btn_blue:hover,
+.gh_btn_blue:visited{color:#fff;background:#2c66e8 ;box-shadow:0 10px 10px 0 rgba(50,94,248,0.18);}
+
+/*橙色*/
+.gh_btn_orange,
+.gh_btn_orange:focus{color:#fff;background:#fc892a;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);}
+.gh_btn_orange:active,
+.gh_btn_orange:hover,
+.gh_btn_orange:visited{color:#fff;background:#e4761f;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);}
+
+/*加载中、半禁用*/
+.gh_btn_blue.loading,.gh_btn_blue.btn_loading,
+.gh_btn_blue.loading:active,.gh_btn_blue.btn_loading:active,
+.gh_btn_blue.loading:hover,.gh_btn_blue.btn_loading:hover,
+.gh_btn_blue.loading:visited,.gh_btn_blue.btn_loading:visited,
+.gh_btn_blue.loading:focus,.gh_btn_blue.btn_loading:focus{background: #a4c0ff;box-shadow:0 10px 10px 0 rgba(50,94,248,0.18);color:#fff;}
+.gh_btn_orange.loading,
+.gh_btn_orange.loading:active,
+.gh_btn_orange.loading:hover,
+.gh_btn_orange.loading:visited,
+.gh_btn_orange.loading:focus{color:#fff;background:#fed3ab;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);}
+
+/*按钮禁用*/
+.gh_btn_disabled,
+.gh_btn_disabled:hover,
+.gh_btn_disabled:active,
+.gh_btn_disabled:visited,
+.gh_btn_disabled:focus{color:#fff;background:#d2d2d2;box-shadow:0 10px 10px 0 rgba(156,149,147,0.18)}
+
+/*outline*/
+.gh_btn_blue.gh_btn_outline,
+.gh_btn_blue.gh_btn_outline:focus{color:#3272ff;background:#fff;box-shadow:0 5px 5px 0 rgba(74,144,226,0.18);border:1px solid #aac8ff;}
+.gh_btn_blue.gh_btn_outline:active,
+.gh_btn_blue.gh_btn_outline:hover,
+.gh_btn_blue.gh_btn_outline:visited{color:#2c66e8;background:#fff;box-shadow:0 5px 5px 0 rgba(74,144,226,0.18);border: 1px solid #2c66e8;}
+
+.gh_btn_orange.gh_btn_outline,
+.gh_btn_orange.gh_btn_outline:focus{color:#fc892a;background:#fff;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);border: 1px solid #fc892a;}
+.gh_btn_orange.gh_btn_outline:active,
+.gh_btn_orange.gh_btn_outline:hover,
+.gh_btn_orange.gh_btn_outline:visited{color:#e4761f;background:#fff;;box-shadow:0 10px 10px 0 rgba(248,91,50,0.18);border: 1px solid #e4761f;}
+
+/*========产品标签===========*/
+/*标签*/
+.gh_icon_tag {
+	display: inline-block;
+    padding: 3px 8px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    position: relative;
+    top:-1px
+}
+/*投资者标签*/
+.gh_tag_investor {border-radius:50px;border:none;}
+/*风险等级标签*/
+.gh_tag_risk_level{border-radius:50px;}
+/*基础标签*/
+.gh_tag_general{border-radius:50px;}
+/*扩展标签*/
+.gh_tag_extend{margin-top: 5px;border-radius:50px;}
+.gh_icon_basical_new {display: inline-block;width: 92px;height: 92px;position: absolute;right: -59px;top: -21px;}
+.gh_none{display: none;}
+
+/*进度条*/
+.gh_progress {height: 5px;margin-top: 8px;margin-bottom: 20px;overflow: hidden;background: #d2d2d2;border-radius: 100px;float: left;}
+.gh_progress_bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background: #2D6fff;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.gh_progress_buble{
+	font-size: 10px;
+    display: inline-block;
+    border-radius: 14px;
+    width: 30px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+.gh_noProgress {width: 100%;margin-top: 29px;margin-bottom: 20px;}
+
+/*共用弹窗样式*/
+.gh_modal{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;    
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background: rgba(0,0,0,0.3);
+    overflow-y: auto;
+    overflow-x: hidden;
+    behavior: url(static/css/plugins/PIE.htc);
+    -pie-background: rgba(0,0,0,0.3);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+}
+
+.modal-open .gh_modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.gh_modal_dialog {margin:150px auto 0px;position: relative;}
+.gh_modal_content {position: relative;border-radius: 0;word-break: break-all;padding-bottom:20px;padding: 40px 30px;}
+.gh_modal_header {padding: 0px 20px;}
+.gh_modal_close{
+	height:23px;
+	width: 23px;
+	position: absolute;
+	right: 15px;
+    top: 15px;
+	z-index: 999;
+	font-size:40px ;
+	cursor: pointer;
+}
+.gh_modal_title{
+	font-size:16px;
+	color:#222;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 30px;
+}
+.gh_modal_body{
+	text-align: center;
+	position: relative;
+	padding: 30px 20px 0px;
+}
+.gh_modal_header~.gh_modal_body{
+	padding-top:0;
+}
+.gh_modal_botton_box .gh_btn{margin-top: 38px;width: 149px;}
+.gh_modal_footer {
+	text-align: center;
+    padding: 15px;
+    text-align: right;
+}
+.gh_modal_lg{width: 828px;}
+.gh_modal_md{width: 680px;}
+.gh_modal_sm{width: 420px;}
+
+ /*======头部======*/
+.gh_navbar_top{
+	min-height: 65px;
+    padding-top: 23px;
+    margin-bottom: 0px;
+}
+.gh_header_logo img{
+	width: 200px;
+    margin-right: 36px;
+}
+.gh_nav_right{
+	width: 230px;
+	cursor: pointer;
+	padding: 0px;
+	float: right;
+	text-align: right;
+}
+.gh_nav_right li {
+    height: 38px;
+    line-height: 38px;
+}
+.gh_index_login{
+    background-position: -627px -29px;
+    width: 65px;
+    height: 63px;
+}
+.gh_nav_right li:nth-child(2){width: 15%;}
+.gh_icon_header_phone {
+	display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 0px;
+}
+.gh_header_app_erweima{
+	width: 154px;
+    padding: 12px 17px 15px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 9999;
+    padding: 5px;
+    right: 0px;
+    top: 32px;
+    border-top: transparent;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.09);
+    display: none;
+    position: absolute;
+    text-align: center;
+}
+.gh_header_app_erweima p{font-size:14px ;line-height: 15px;}
+.gh_headerApp:hover .gh_header_app_erweima{display: block;}
+.gh_nav_row{
+	position: relative;
+	line-height: 44px;
+    width: 100%;
+    z-index: 900;
+}
+.gh_navbar_bottom{width: 100%;height: 37px;}
+.gh_navbar_left{
+	text-align: center;
+	height: 37px;
+    border-top-right-radius: 15px;
+    width: 25%;
+}
+.gh_navbar_right{
+	position: absolute;
+    height: 44px;
+    border-bottom-left-radius: 20px;
+    top: 16px;
+    left: 23%;
+    right: 0px;
+    padding-left: 40px;
+}
+.gh_navbar_right_main{position: absolute;top: 16px;left: 0;right: 0;height: 44px; }
+.gh_navbar_right_box{
+	position: relative;
+    width: 1025px;
+    height: 44px;
+    border-bottom-left-radius: 20px;
+    margin: 0 auto;
+    left: 30px;
+    padding-left:30px;
+    padding-right: 15px;
+}
+.gh_hiddenavs .gh_navbar_navs{display: none;}
+.gh_navbar_navs>a{
+	padding: 7px 9px;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0 6px;
+    line-height: 44px;
+	opacity: .8;
+	filter:alpha(opacity=80);
+	display: inline-block;
+	line-height: 16px;
+}
+.gh_nologin{
+	text-align: center;
+	display: none;
+}
+.gh_nologin>a{font-size:16px ;opacity: .8;filter:alpha(opacity=80);}
+.gh_navbar_navs>a:hover,.gh_nologin a:hover{
+	color:#fff;
+	opacity: 1;
+	filter:alpha(opacity=100)
+}
+.gh_navbar_navs>a.active{
+	border-radius: 0px;
+    font-weight: bolder;
+    padding: 7px 9px;
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
+.gh_gap_line{
+    top: 18px;
+    left: 80px;
+    margin: 0 23px;
+    opacity: 0.28;
+    width: 1px;
+    height: 13px;
+}
+.gh_header_myauth{
+	font-size: 14px;
+	padding-left: 10px;
+	display: inline-block;
+	text-align: left;
+}
+.gh_icon_header_user{
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left:10px ;
+    position: relative;
+    top: 4px;
+}
+.gh_icon_arrow_right{
+	display: inline-block;
+	position: relative;
+    width: 20px;
+    height: 16px;
+    top: 5px;
+}
+.gh_dropdown_box{position: absolute;font-size: 14px;top: 44px;right: -0.2px;width: 180px;height: 210px;z-index: 999;padding: 14px;display: none;}
+.gh_dropdown_box li{line-height: 19px;width:100%;float: left;margin-top:5px;}
+.gh_dropdown_box .gh_header_img{width: 100%;float: left;padding-top: 10px;height: 80px;}
+.gh_dropdown_content{float: left;font-size: 12px;margin-left: 5px;}
+.gh_dropdown_content>p:first-child{margin: 0px;padding-top: 10px;}
+.gh_dropdown_content>p:last-child{font-size: 12px;margin: 0px;padding-top: 5px;}
+.gh_loginStatus li:hover .gh_dropdown_box{display: block;}
+
+/*==========尾部样式=========*/
+.gh_footer_box{width: 100%;height: 232px;}
+.gh_footer_phone,.gh_footer_mail{margin-bottom: 16px;margin-right: 10px;}
+.gh_footer_phone{width: 39px;height: 40px;}
+.gh_footer_mail{width: 45px;height: 35px;} 
+.gh_footer_phone img,.gh_footer_mail img{display: inline-block;margin-right: 12px;width: 100%;}
+.gh_footer_box p{margin: 0px;}
+.gh_footer_box .gh_col_2.gh_tcenter{width: 14%;}
+.gh_footer_copyright{font-size: 12px;padding-top: 23px;text-align: center;width: 1100px;margin: 20px auto;}
+
+.gh_footer_box .title{font-size: 16px;text-align: left;padding-left:30px;}
+.foot_links{text-align: left;padding-left:30px;margin-top: 10px;line-height:22px;font-size: 12px;}
+.foot_links a:hover{text-decoration: underline;}
+/*========注册样式\register.html=========*/
+.gh_login_bg{width: 100%;height: 460px;}
+.login_banner_bg{position:absolute;height: 460px;width: 100%;min-width: 1100px;}
+.login_banner_txt{position:absolute;height:195px;top:135px;z-index: 2;left: 0;}
+.gh_register_box{width: 420px;height: 485px;position: absolute;right: 0;top: -50px;z-index: 600;}
+.gh_register_box ul{font-size: 16px;line-height: 43px;}
+.gh_register_box ul li{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: -1px;
+}
+.gh_register_content{
+	width: 318px;
+	margin: 28px auto;
+}
+.gh_popup_cotaint .form-group {
+	position: relative;
+	margin-bottom: 18px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.gh_popup_cotaint .form-control{
+	padding: 0;
+	padding-left: 32px;
+	border-radius: 4px;
+	height: 50px;
+	font-size: 16px;
+	line-height: 50px\0;
+	width: 288px;
+	border: none;
+	box-shadow: none;
+}
+.gh_verifyCode_group.form-group .form-control{width: 187px;}
+.gh_verifyCode_group.gh_form_group input{width: 233px;padding-right: 100px;}
+.gh_veribtn{
+	position: absolute;
+	right: 0;
+	top: 18px;
+	width: 100px;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+}
+/*协议勾选*/
+.gh_input_check{
+	margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.gh_btn_lg{width: 320px;height: 50px;}
+.gh_register_modal{
+	background: rgba(0,0,0,0.3);
+	opacity: 1;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	overflow: hidden;
+}
+.gh_register_dialog{
+	width:360px;
+	padding: 40px 30px;
+	margin: 200px auto;
+	text-align: center;
+}
+.gh_reg_success{
+	margin: 0px auto;
+	width: 70px;
+	height: 70px;
+	font-size: 56px;
+	border-radius: 50%;
+	text-align: center;
+}
+.gh_register_modal .gh_register_dialog a{
+	display: inline-block;
+	width: 175px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 5px;
+	font-size: 16px;
+	box-sizing: border-box;
+	margin-top: 38px;
+}
+/*========登录样式\login.html=========*/
+.gh_login_box{
+	width: 420px;
+	height: 420px;
+	position: absolute;
+	right: 0;
+	top: -50px;
+	z-index: 600;
+}
+.gh_login_box .gh_tabs_nav{
+	border-bottom: none;
+}
+.gh_icon_phone{    
+	display: inline-block;
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    left: 6px;
+    top: 16px;
+}
+.gh_icon_locker{
+	display: inline-block;
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    left: 6px;
+    top: 16px;
+}
+.gh_login_box ul{
+	font-size: 16px;
+	line-height: 43px;
+	height: 48px;
+}
+.gh_login_box ul li{
+	width: 50%;
+	float: left;
+	margin-bottom: -1px;
+	position: relative;
+	display: block;
+}
+.gh_login_box ul li a{
+	border-radius: 0px;
+	display: inline-block;
+	height: 48px;
+	line-height: 48px;
+	width: 100%;
+	padding: 0px;
+	text-align: center;
+	box-sizing: border-box;
+}
+.gh_login_box ul li a:hover{font-weight: 600;}
+.gh_login_box ul li.active a{border: none;font-weight: 600;}
+.gh_content .gh_content_tab{
+	display: none;
+	width: 320px;
+	margin: auto;
+}
+.gh_content .active{display: block;}
+.gh_findPwd:hover{text-decoration: none;}
+/*========协议样式\protocol.html=========*/
+.gh_modal_body.gh_protocol{padding: 20px 40px;box-sizing: border-box;}
+/*========快捷登录\user-center.html=========*/
+.gh_modal_dialog.gh_user_center{padding: 0;}
+.gh_login_box.gh_user_center{margin-top: 50px;}
+/*========交易密码\payPwd.html=========*/
+.gh_input_safenum{
+	position: absolute;
+	left: 0;
+	border: none;
+	opacity: 0;
+	text-indent: -999px;
+	height: 48px;
+	line-height: 48px;
+	float: left;
+	width: 294px;
+	margin-left: 15px;
+	z-index: 2;
+	filter:alpha(opacity=0);
+	height: 48px;
+}
+.paypwd_pwd_box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 4px;
+	border-right: none;
+	width: 294px;
+	text-align: center
+}
+.paypwd_pwd_box li{
+	float: left;
+	width: 48px;
+	height: 48px;
+	line-height: 46px;
+	overflow: hidden;
+	font-size: 30px;
+}
+.gh_point {
+    width: 14px;
+    height: 14px;
+    margin: auto;
+    border-radius: 50px;
+    margin: 18px;
+}
+.paypwd_mobile{
+	margin-left: 15px;
+	border: none;
+}
+.paypwd_vcode{
+	width: 187px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 4px;
+	float: left;
+	margin-left: 15px;
+	padding: 0 5px;
+	padding-right: 101px;
+}
+.paypwd_vbtn{
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	position: absolute;
+	left: 46%;
+	top: 12px;
+	padding: 0;
+	display: inline-block;
+	width: 101px;
+}
+.paypwd_vbtn.btn_loading{
+	left: 45%;
+	color: #999;
+}
+.account_pwdresult{
+	width: 96px;
+	height: 96px;
+	margin: 0 auto;
+}
+.account_pwdresult img{width: 100%;}
+
+
+
+/*========布局========*/
+/*===主题布局===*/
+.gh_warp{
+	width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.gh_main{
+	width: 1098px;
+	margin-top: 60px;
+	margin-bottom: 40px;
+	min-height: 400px;
+}
+.gh_con{
+	padding: 30px 50px;
+}
+.gh_box {
+    width: 1098px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.gh_sidebar{
+	width: 200px;
+	float: left;
+	min-height:800px;
+}
+.gh_sidecon{
+	width: 897px;
+	float: left;
+	min-height:800px;
+}	
+.gh_sidecon.gh_con{
+	width: 797px;
+}
+
+/*===sidetab===*/
+.gh_sidebar_nav a{
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	display: block;
+	padding: 1px;
+	padding-left: 30px;
+	border-right:0;
+	width:170px;
+}
+.account_arrow_right{
+	display: inline-block;
+	float: right;
+	margin-top: 11px;
+	width: 22px;
+	height: 20px;
+}
+
+.gh_sidebar_nav a.active{
+	padding-top:0;
+	padding-bottom:0;
+	position: relative;
+	z-index: 2;
+	font-weight: 600;
+}
+.gh_sidebar_nav a.active:first-child{border-top: 0px;padding-top: 1px;}
+.gh_sidebar_nav a.gh_topline.active{border-top: 1px solid #eee;padding-top:0px;font-weight: 600;}
+/*===tabs===*/
+.gh_tabs_nav{clear:both;zoom: 1;line-height: 43px;}
+.gh_tabs_nav:after{content:".";display:block;clear:both;visibility:hidden;line-height: 0;font-size: 0;height: 0;width: 0}
+.gh_tabs_nav li{float: left; margin-bottom: -1px;position: relative;}
+.gh_tabs_nav li a{padding: 10px 20px;}
+.gh_tabs_nav li.active a{text-align: center;}
+
+.gh_tabs_con > .gh_tabs_pane{display: none;}
+.gh_tabs_con > .gh_tabs_pane.active{display: block;}
+
+.gh_tabs_pane .gh_tabs_nav{padding-left: 1px;border-bottom:none;line-height:38px;}
+.gh_tabs_pane .gh_tabs_nav li a{padding: 8px 40px;}
+.gh_tabs_pane .gh_tabs_nav li{border-bottom: none;margin-left: -1px;}
+.gh_tabs_pane .gh_tabs_nav li.active{border-top: none;padding-top: 1px;}
+.gh_tabs_pane .gh_tabs_nav li.active a{border-top: 2px solid #2d6eff;color: #2d6eff;text-align: center;border-bottom: none;}
+
+
+/*====无数据提示样式====*/
+.gh_noDataTips {
+    width: 120px;
+    height: 120px;
+    margin: 100px auto 100px;
+    text-align: center;
+}
+.gh_noDataTips_coupon,.gh_noDataTips_activity,.gh_noDataTips_notice{
+	width: 120px;
+    height: 120px;
+}
+.gh_norecord {
+    font-size: 14px;
+    margin-top: 31px;
+}
+
+.gh_tr_w_h {width: 850px;height: 60px;}
+
+/*分页样式*/
+.gh_tcdPageCode{
+	display: block;
+    padding: 0px;
+    text-align: center;
+    float: right;
+}
+.gh_tcdPageCode span{
+	display: inline-block;
+	width: 36px;
+    height: 36px;
+    line-height: 34px;
+}
+.gh_tcdPageCode span.disabled {
+    text-align: center;
+    display: inline-block;
+    width: 68px;
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+}
+.gh_tcdPageCode span.current {
+    display: inline-block;
+    width: 36px;
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+}
+.gh_tcdPageCode a {
+    display: inline-block;
+    width: 36px;
+    height: 34px;
+    line-height: 32px;
+    vertical-align: middle;
+}
+.gh_tcdPageCode a.nextPage, .gh_tcdPageCode a.prevPage {
+    width: 68px;
+    text-align: center;
+}
+.gh_icon_success {
+	margin:0px auto 23px;
+	width: 68px;
+	height: 68px;
+	font-size: 56px;
+	border-radius: 50%;
+	text-align: center;
+}
+/*共用表单label~input*/
+.gh_form_group{
+	height: 50px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	position: relative;
+}
+.gh_form_group label{
+	font-size:14px;
+	width: 15%;
+	line-height: 50px;
+	float: left;
+	text-align: right;
+}
+.gh_form_group input{
+	width: 320px;
+	height: 48px;
+	float: left;
+	margin-left: 20px;
+	-webkit-appearance: none;
+	-moz-appearance: none; 
+	-o-appearance: none; 
+	appearance: none;
+	outline: none;
+	border-radius: 4px;
+	padding: 0px 15px;
+	line-height: 48px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+}
+.gh_pwd_vericode_btn{
+	font-size: 14px;
+    text-align: center;
+    width:100px;
+    position: relative;
+    top: 15px;
+    right: 5px;
+    z-index: 2;
+    margin-left: -100px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+}
+/*改变input placeholder颜色*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc; opacity:1; 
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc;opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #ccc;opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #ccc;opacity:1;
+}
+
+/*=====绑卡=====*/
+.gh_form_group.verifyCode input {
+	width: 193px;
+	margin-right: 10px;
+}
+.gh_verifyCode {
+	background: #ffffff;
+	border: 1px solid #77bdff;
+	border-radius: 4px;
+	min-width: 95px;
+	height: 47px;
+	font-size: 14px;
+	color: #359eff;
+	display: inline-block;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.gh_verifyCode.btn_loading{border: 1px solid #999;color: #999;}
+.gh_choose_bank {
+	width: 320px;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 15px;
+	color: #2d6fff;
+	cursor: pointer;
+}
+.gh_bank_list_logo{min-height: 70px;margin-top: 20px;}
+.gh_bank_list_logo li {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    width: 165px;
+    height: 58px;
+    margin-right: 12px;
+    float: left;
+    text-align: center;
+    line-height: 56px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.gh_bank_list_logo li:hover, .gh_bank_list_logo li.active {
+    background: #ffffff;
+    border: 1px solid #77bdff;
+    box-shadow: 0px 0px 8px 0px rgba(57, 134, 184, 0.13);
+    width: 165px;
+    height: 58px;
+}
+.gh_bank_list_logo li img {
+	max-width: 150px;
+    vertical-align: middle;
+}
+.validate_modal_hr{float: left;width: 100%;border-bottom: 1px dotted #eee;margin-top: 15px;}
+
+
+/*======风险测评列表======*/
+.risktesting_result{text-align: center;margin: 0 auto;}
+.riskLevelImg{width: 156px;height: 182px;margin: auto;}
+.risktesting_result p{padding-top: 30px;}
+.risktesting_result p label{cursor: pointer;}
+.risk_appraisal_list {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 35px;
+	text-align: left;
+}
+
+.risk_appraisal_list p {
+	line-height: 30px;
+}
+.risk_appraisal_list input[type="radio"] {
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+	border: 1px solid #ccc;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.risk_appraisal_list input[type="radio"]:focus {
+	outline: none;
+}
+
+.risk_appraisal_list input[type="radio"]:checked {
+	padding: 2px;
+	background-color: #4892ff;
+	background-clip: content-box;
+}
+.gh_tipstxt{color:red;padding: 15px 0;}
+
+/*红包弹层*/
+.red_container {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	background: rgba(0, 0, 0, 0.67);
+	display: none;
+	opacity: 0;
+	transition: opacity .3s;
+	text-align: center;
+}
+
+.red_container.gh_show {
+	opacity: 1;
+}
+
+.red_container.gh_active {
+	display: -webkit-box;
+	display: box;
+}
+
+.hongbao.noSuccess {
+	height: 392px;
+    width: 380px;
+    background: url(../../images/redPackets_bg_2x.png) no-repeat;
+    background: url(../../images/redPackets_bg.png) no-repeat\0;
+    background-size:100% 100%;
+    margin: 150px auto;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.coupon {
+	height: 350px;
+	background: url(../../images/coupon_modal.png) no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 50%;
+	border-radius: 10px;
+	position: fixed;
+	top: 36%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	left: 0%;
+	text-align: center;
+	color: #fff;
+	transition: all 0.3s ease-in;
+}
+
+.topcontent {
+	height: 230px;
+}
+
+.hongbao.success {
+	background: url(../../images/red_success_bg_2x.png) no-repeat;
+	background: url(../../images/red_success_bg.png) no-repeat\0;
+	background-size: 100% 100%;
+	height: 392px;
+    width: 380px;
+    margin: 150px auto;
+    color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.avatar {
+	position: relative;
+}
+
+.avatar span {
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	display: block;
+	font-size: 24px;
+	font-weight: bolder;
+}
+
+.close {
+	color: #fff;
+	cursor: pointer;
+}
+
+.avatar img {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 10%;
+}
+
+.topcontent h3,
+.topcontent h2 {
+	padding: 30px 0 10px;
+	margin-top: 0px;
+}
+
+.description {
+	margin: 15px 0;
+	font-size: 18px;
+	padding: 0px 13px;
+	color: #efe0c2;
+}
+
+.chai_redPackets {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #efe0c2;
+	background-color: #efe0c2;
+	border-radius: 50%;
+	color: #87464e;
+	font-size: 40px;
+	display: inline-block;
+	margin-top: -50px;
+	box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	z-index: 500;
+	position: relative;
+	cursor: pointer;
+	margin-left:13px;
+}
+.gh_hidden{display: none;}
+
+.gh_show.gh_active{display: block;opacity: 1;}
+
+.chai_redPackets span {
+	margin-top: 25px;
+	display: inline-block;
+}
+
+.chai_success {
+	font-size: 20px;
+	color: #d8393c;
+	display: inline-block;
+	margin: 20px 0;
+}
+
+.chai_success span {
+	font-size: 38px;
+	display: inline-block;
+}
+
+.topcontent.success {
+	background: transparent;
+	box-shadow: 0px 1px 0px -3px rgba(0, 0, 0, 0.2);
+}
+
+.topcontent.success .close {
+	cursor: pointer;
+    width: 33px;
+    height: 32px;
+    opacity: 1;
+    background: url(../../images/gh_pc_images.png) no-repeat;
+    background-position: -167px -211px;
+}
+
+.topcontent.success #sendName {
+	color: #d8393c;
+}
+
+.topcontent.success .description {
+	color: #d8393c;
+}
+
+.avatar .close {
+	display: inline-block;
+    width: 35px;
+    height: 35px;
+    top: -2px;
+    font-size: 42px;
+    right: -8px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.close_txt {
+	transform: rotate(45deg);
+	padding: 10px;
+	margin-right: -5px;
+	margin-top: -12px;
+	color: #d0021b;
+}
+.close_txt:hover{color: #d0021b;}
+.coupon .close img {
+	width: 24px;
+}
+
+.coupon .description {
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+
+.coupon_content {
+	height: 100%;
+	width: 72%;
+	margin: 45px auto;
+}
+
+.chai {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 56%;
+	left: 0%;
+	font-size: 20px;
+}
+
+.couponCheck {
+	width: 100%;
+}
+
+.couponCheck button {
+	background-image:linear-gradient(34deg,  #fb7023 0%,#fca332 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #fb7023, endColorstr = #fca332);
+	border-radius:100px;
+	width:100px;
+	height:35px;
+	line-height: 35px;
+	border: none;
+	color: #fff;
+	font-size:16px ;
+	margin: auto;
+	cursor: pointer;
+}
+
+.couponMessage {
+	bottom: 30%;
+	font-size: 16px;
+}
+
+@media only screen and (max-width:379px)and (min-width:330px) {
+	.coupon .description {
+		font-size: 23px;
+	}
+	.chai {
+		font-size: 23px;
+	}
+	.couponCheck {
+		padding: 5px 25px;
+	}
+}
+
+@media only screen and (min-width:414px) {
+	.coupon .description {
+		font-size: 26px;
+	}
+	.chai {
+		font-size: 26px;
+	}
+}
+
+.rotate {
+	-webkit-animation: anim .3s infinite alternate;
+	-ms-animation: anim .3s infinite alternate;
+	animation: anim .3s infinite alternate;
+}
+
+.bottom_img {
+	width: 150px;
+    height: 35px;
+	margin: 35px auto;
+}
+
+.bottom_img img {
+	width: 100%;
+	height: 100%;
+}
+
+@-webkit-keyframes anim {
+	from {
+		-webkit-transform: rotateY(180deg);
+	}
+	to {
+		-webkit-transform: rotateY(360deg);
+	}
+}
+
+@-ms-keyframes anim {
+	from {
+		-ms-transform: rotateY(180deg);
+	}
+	to {
+		-ms-transform: rotateY(360deg);
+	}
+}
+
+@keyframes anim {
+	from {
+		transform: rotateY(180deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+}
+
+/*===文章内容===*/
+.gh_news_content p{text-align: left;line-height: 30px;}
+.gh_news_content p:nth-child(2){text-align: center;}
+.gh_news_content p:nth-child(3){text-align: center;}
+.gh_news_content p img{margin: 20px auto;display: block;max-width: 80%;}
+
+/*===兼容IE8===*/
+.input_ie8_mixed_close{
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	right: -8px;
+    top: 0px;
+	z-index: 100;
+	font-size:40px ;
+	background: url(../../images/pc_input_mixed_close.png) no-repeat center;
+	cursor: pointer;
+}
+.withdraw_form_box .input_ie8_mixed_close{right: 24px;}
+
+/*平台公告标签*/
+.notice_New {
+	font-size: 10px;
+	color: #ffffff;
+	background: #ff7660;
+	padding: 1px 3px;
+	border-radius: 4px 3px 3px 3px;
+	margin-left: 5px;
+}
+
+.notice_Hot {
+	font-size: 10px;
+	color: #ffffff;
+	background: #fbb21a;
+	padding: 1px 3px;
+	border-radius: 4px 3px 3px 3px;
+	margin-left: 5px;
+}
+
+
+/*建设中*/
+.gh_builder{
+	width: 100%;
+	height: 700px;
+	text-align: center;
+	background: #fff;
+}
+.gh_builder img{
+	margin-top: 100px;
+	margin-bottom: 66px;
+	width: 730px;
+	vertical-align: middle;
+}
+/*低版本浏览器提示*/
+.gh_browser_tips{padding: 50px;text-align: center;margin-top: 200px;color: #666;}
+.gh_browser_tips_logo{margin-bottom: 50px;}
+.gh_browser_tips_title{font-size: 80px;padding: 20px;}
+.gh_browser_tips_txt{font-size: 20px;}
+.gh_browser_tips_table{width: 730px;margin:80px auto 0;font-size: 20px;}
+.gh_browser_tips_table img{width: 120px;margin-bottom: 10px;}
+
+
+/*tooltips*/
+.gh_tooltips_box{display: inline-block;width: 16px;height: 16px;line-height: 16px;text-align: center;background: #bbb;color: #fff;position: relative;border-radius: 10px;cursor: default;}
+.gh_tooltips_con{position: absolute;width: 200px;background: #eee;border-radius: 6px;z-index: 50;color: #777;padding:5px;text-align: left;line-height:18px;top:22px;left: -2px;display: none;}
+.gh_tooltips_arrow{border: 5px solid transparent;border-bottom-color: #eee;position: absolute;top:-10px;left: 5px;}
+.gh_tooltips_box:hover .gh_tooltips_con{display: block;}
+

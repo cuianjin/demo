@@ -1,0 +1,374 @@
+/*
+ Title:GH账户中心样式
+ Author:cuixu
+ Version:v1.0
+ Date:2017-11-8
+*/
+@import url('public/base.css');
+@import url('public/common.css');
+@charset "utf-8";
+
+/*========账户中心/account.html========*/
+.account_icon {
+	width: 32px;
+	height: 20px;
+	display: inline-block;
+}
+.account_user_photo {
+    width: 96px;
+    margin: 0 auto;
+    padding-top: 24px;
+}
+.account_user_photo img{width: 100%;}
+.account_user_info {
+	margin-top: 24px;
+	font-size: 14px;
+	text-align: center;
+}
+.account_icon_info {
+	padding: 10px 0px 35px 25px;
+	position: relative;
+}
+.account_icon_info ul {
+	overflow: hidden;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+}
+.account_icon_info ul li {
+	float: left;
+	margin-right: 20px;
+    width: 35px;
+    height: 32px;
+    cursor: pointer;
+}
+.account_view_text p{
+	font-size: 20px;
+    margin-bottom: 5px;
+    padding-top: 8px;
+}
+.account_icon_point{display: inline-block;width: 18px;height: 18px;border-radius: 18px;position: relative;top:4px;margin-left: -35px;margin-right:15px;}
+.account_rtxt {
+	margin-top: 40px;
+	margin-left: 40px;
+	padding-left: 15px;
+}
+.account_rtxt>ul>li {
+	font-size: 14px;
+	text-align: left;
+	line-height: 48px;
+}
+.account_rtxt>ul>li>div{padding: 0;}
+
+
+/*========我的活期/account-myt0.html========*/
+.account_plist_view{padding: 20px 0;}
+.account_plist_view table{width: 100%;}
+.account_plist_view table p{padding-top:10px;padding-bottom:5px;font-size: 18px;}
+.account_btn_link{text-align: right;}
+.account_btn_link a{padding: 0 5px;}
+
+
+/*========交易单/account-tradelist.html========*/
+.gh_filter_view{margin-bottom: 20px;}
+.gh_filter_view dt{float: left;margin-right: 5px;display: inline-block;}
+.gh_filter_view dd{float: left;}
+.gh_filter_term li{min-width:100px;text-align: center;display: inline-block;float: left;}
+.gh_filter_term li a.active{padding: 4px 13px;border-radius: 20px;}
+
+.gh_filter_term_date{position: relative;display: table;border-collapse: separate;width: 330px;}
+.gh_filter_term_date label{padding-top:3px;}
+.gh_filter_term_date .form-control{
+	width: 80px;
+	height: 22px;
+	background: url(../images/date-img_2x.png) 94px center no-repeat;
+	background: url(../images/date-img.png) 94px center no-repeat\0;
+	background-size: 12px 13px;
+	border-radius:2px;
+	box-shadow: none;
+	padding:0 10px;
+	padding-right: 22px;
+    font-size: 12px;
+}
+.gh_filter_term_date .account_dateline{margin: 0 3px;}
+
+/*========我的银行卡/account-myCard.html========*/
+.account_icon_add{
+	width: 33px;
+	height: 33px;
+	margin: 0 auto;
+	margin-top: 75px;
+}
+
+.account_icon_add img {
+	width: 100%;
+	height: 100%;
+}
+
+.account_card_box {
+	background:url(../images/account_mycard_bg_2x.png) center no-repeat;
+	background:url(../images/account_mycard_bg.png) center no-repeat\0;
+	background-size: 100% 100%;
+	border-radius:5px;
+	width: 385px;
+        height: 206px;
+	position: relative;
+}
+.account_card_txt {
+    text-align: center;
+    font-size: 15px;
+    opacity: 0.7;
+    padding-top: 10px;
+}
+
+.account_bank_icon {
+	float: left;
+	max-width: 156px;
+	max-height: 25px;
+}
+
+.account_bank_icon img {
+	width: 100%;
+	height: 100%;
+}
+
+.account_banktitle {
+	padding:25px 25px 20px;
+	vertical-align: middle;
+}
+
+.account_bankcon{padding:0px 25px;}
+.account_bankcon p {
+	opacity: 0.8;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.account_bankcard_bottom{
+	padding: 0px 15px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-family:STHeitiTC-Light;
+	font-size:12px;
+	text-align:center;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 355px;
+}
+.gh_modal_body{text-align: left;}
+.gh_modal_body.withdraw{text-align: center;}
+.gh_modal_body .gh_form_group label{width:30%;}
+
+
+
+/*========安全设置/account-mySetting.html========*/
+.setting_icon{width:22px;height: 23px;float: left;margin-top: 25px;margin-right: 15px;}
+.account_title{
+	font-size: 16px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 20px;
+	margin: 15px auto;
+}
+.account_process{
+	border-radius: 8px;
+	width: 100%;
+	height: 5px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.account_progress_bar{
+	border-radius: 100px;
+	box-shadow: none;
+	float: left;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+	transition: width .6s ease;
+}
+.account_process_only{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+.account_icon img{
+	vertical-align: middle;
+	width: 20px;
+}
+.gh_btn.account_btn{
+	position: absolute;
+	right: 0;
+	width: 77px;
+	height: 27px;
+	line-height: 27px;
+	padding: 0;
+}
+.gh_btn.account_btn.gh_none{
+	display: none;
+}
+.account_pwd_input{
+	background: #fff;
+	border: 1px solid #eee;
+	width: 286px;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 5px;
+	border-radius: 4px;
+	float: left;
+	margin-left: 12px;
+	margin-right: 25px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+.gh_modal.account_setting .gh_col_4{width: 30%;}
+
+
+/*========我的优惠券/account-mySetting.html========*/
+
+.coupon_list {
+	
+	margin-top: 29px;
+}
+
+.coupon_list_ul {
+	position: relative;
+	margin-right: 29px;
+	margin-top:29px;
+	padding: 24px;
+	width:198px;
+	height:260px;
+	background: url(../images/account_coupon_bg_active.png) no-repeat;
+	background-size:100% 100% ;
+}
+.notUsedBox .coupon_list_ul:nth-child(3n),.usedBox .coupon_list_ul:nth-child(3n),.expiredBox .coupon_list_ul:nth-child(3n){margin-right: 0px;}
+.usedBox .coupon_list_ul,.expiredBox .coupon_list_ul{
+	background: url(../images/account_coupon_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.usedBox .coupon_used.btn,.expiredBox .coupon_used.btn{
+	display: none;
+}
+.notUsedBox .coupon_icon {
+	width: 55px;
+	height: 55px;
+	background: url(../images/expiring_label.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	right: -4px;
+    top: -4px;
+}
+.account.myCoupon .gh_btn{padding:9px 12px;width: 100px;box-shadow: none;border:none;font-size:14px ;}
+.coupon_icon {
+	width: 85px;
+    height: 80px;
+    position: absolute;
+    right: 10px;
+    bottom: 23px;
+}
+.coupon_icon img{width: 85px;}
+.usedBox .coupon_icon.gh_used{display: block;}
+.expiredBox .coupon_icon.gh_expired{display: block;}
+.coupon_used.btn {
+	border-radius:100px;
+	border:none;
+	width:100px;
+	height:35px;
+}
+
+.coupon_used.btn:hover,
+.coupon_used.btn:active,
+.coupon_used.btn:focus,
+.coupon_used.btn:visited {
+	border: none;
+}
+
+
+.no_coupon {
+	width: 100%;
+	margin: 100px auto;
+	float: left;
+	text-align: center;
+}
+
+.no_coupon img{width: 114px;height: 77px;}
+
+
+/*========消息/account-message.html========*/
+.message-lists ul {
+	width: 100%;
+}
+
+.message-lists ul li {
+	width: 100%;
+	position: relative;
+	padding: 20px 0px 10px 18px;
+	margin-bottom: 0px;
+}
+
+.noread-icon {
+	width: 5px;
+	height: 5px;
+	border-radius: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+	position: absolute;
+	top: 25px;
+	left: 5px;
+}
+
+.message-title {
+	overflow: hidden;
+}
+
+.message-title .title {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.message-title .date {
+	float: right;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.message-des p {
+	line-height: 28px;
+}
+
+.message-detail,
+.message-nodetail {
+	cursor: pointer;
+}
+
+.message-detail a {
+	font-size: 12px;
+}
+.account_messageMark{
+	margin-top: -30px;
+}
+
+
+
+/*========风险测评/account-risktesting.html========*/
+.account_risktesting_top{padding-top: 50px;padding-bottom: 50px;}
+
+
+/*========我的邀请/account-invivate.html========*/
+.account_tab_tips{float: right;position: relative;font-size: 12px;top:30px;}
+.account_icon_rank{width: 22px; vertical-align: middle;}
+.account_idetail_box{padding-top: 40px;height: 200px;}

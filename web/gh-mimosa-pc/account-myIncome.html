@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>我的收益-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="static/css/plugins/bootstrap-datetimepicker.css">
+		<link href="static/css/account.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+	    <![endif]-->
+			<!--[if lte IE 8]>
+	        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+	    <![endif]-->
+	    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/public/moment/moment.min.js"></script>
+		<script src="static/js/public/moment/locale/zh-cn.js"></script>
+		<script src="static/js/public/bootstrap-datetimepicker.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/account-myIncome.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="account-myIncome" class="account login_tip">
+		<div template-href='header' data-navname="" id="header-box"></div>
+		
+		<div class="gh_warp">
+			<div class="gh_main gh_clearfix">
+				<div class="gh_sidebar">
+					<!--user menu-->
+					<div id="tabnav-box" template-href='accoutTabNav' data-navname="profitUsr"></div>
+				</div>
+				<!--定期-content-->
+				<div class="gh_sidecon gh_con">
+					<div class="gh_f18 gh_c2"><b>我的收益</b></div>
+					<div class="gh_row gh_mt20">
+						<div class="gh_col_3 account_view_text">
+							<p id="yesterDayIncome" data-amount="***">--</p>
+							昨日收益(元)
+						</div>
+						<div class="gh_col_3 account_view_text">
+							<p id="totalIncome" data-amount="***">--</p>
+							累计收益(元)
+						</div>
+					</div>
+					<div class="gh_mt20 gh_tabs">
+						<ul id="myTab" class="gh_tabs_nav">
+							<li class="active ">
+								<a href="#hold" data-toggle="tab">收益记录</a>
+							</li>
+						</ul>
+						<div id="myTabContent" class="gh_tabs_con">
+							<div class="gh_tabs_pane active" id="hold">
+								<div class="gh_filter_box gh_mt25 gh_f12">
+									<dl class="gh_filter_view gh_clearfix" id="incomeFilter">
+										<dt>交易时间</dt>
+										<dd>
+											<ul class="gh_filter_term gh_clearfix">
+												<li class="gh_rline"><a href="javascript:;" data-date="" class="active">全部</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="1">一个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="3">三个月内</a></li>
+												<li class="gh_rline"><a href="javascript:;" data-date="12">一年内</a></li>
+												<li class="">
+													<div class="gh_filter_term_date">
+														<label class="gh_fl gh_ml40">日期</label>
+														<input type='text' class="form-control form_datetime startTime " size="16" id="sDate" autocomplete="off" /><span class="account_dateline">—</span><input type='text' class="form-control form_datetime endTime" size="16" id="eDate" autocomplete="off" />
+														<!--<button class="btn btn-default ml15  pull-left myt0">查询</button>-->
+													</div>
+												</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="gh_pb20">
+									<table class="gh_table" id="incomeTable">
+										<thead>
+											<tr>
+												<th class="gh_tleft">产品名称</th>
+												<th class="gh_tcenter">确认日期</th>
+												<th class="gh_tcenter">收益金额(元)</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<div class="gh_tcdPageCode gh_mt10" id="gh_tcdPageCode"></div>
+									<div class="gh_noDataTips gh_none" id="incomeTable-noRecord">
+										<div class="gh_noDataTips_activity gh_icons"></div>
+										<p class="gh_norecord">暂无记录~</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+  					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>

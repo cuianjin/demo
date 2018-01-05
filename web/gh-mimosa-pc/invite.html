@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 ie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 ie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 ie"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9) | !(IE)]><!-->
+<html class="modern">
+	<!--<![endif]-->
+	<head>
+		<title>邀请活动-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/other.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/clipboard.js"></script>
+		<script src="static/js/public/jquery.qrcode.min.js"></script>
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/public/jquery.als-1.7.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/invite.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="invite">
+		<div template-href='header' data-navname="invite" id="header-box"></div>
+		<div class="invite_box_bg">
+			
+			<div class="invite_box gh_clearfix">
+				<div class="invite_title">
+					<img src="static/images/pc_invite_title.png" alt="" />
+				</div>
+				<div class="invite_logobag">
+					<img src="static/images/pc_invite_redpackets.png" alt="" />
+				</div>
+				<div class="invite_rules_box gh_tcenter">
+					<div class="gh_f20">
+						<span class="invite_line left"></span><b>活动规则</b>
+						<span class="invite_line right"></span>
+					</div>
+					<div class="gh_mt25 gh_f14">每邀请一个好友注册国槐金融，您和您的好友同时获得￥8888 的体验金；</div>
+					<div class="gh_mt25 gh_f14">体验金有效期 7 天，由体验金产生的收益归您个人所有；</div>
+					<div class="gh_mt25 gh_f14">体验金可以累加，邀请越多，奖励越多。</div>
+				</div>
+				<div class="invite_rules_box share gh_mt25">
+					<div class="share_one gh_clearfix">
+						<!--<div class="step f_left col-md-1 product0_div two"></div>-->
+						<div class="step_title">
+							<div><b>发送链接给好友</b><span>（复制您的专属邀请链连，发送给好友，好友通过该链接注册即可〜）</span></div>
+							<div class="gh_f14 gh_mt15 gh_col_12 gh_fw700 gh_none">登录可获得专属邀请链接
+								<a href="javascript:;" class="share_botton_gologin ml15 f_f f_14 toLogin">登录</a>
+							</div>
+							<div class="gh_f14 gh_mt15 gh_tcenter gh_col_12 gh_none" id="copyLink">
+								<b></b>
+								<a href="javascript:;"  id="copyBtn" class="share_botton_gologin gh_ml15 gh_f14" data-clipboard-text="">复制</a>
+							</div>
+							<div class="gh_f14 gh_mt15 gh_tcenter gh_col_12 gh_none gh_cf" id="noData">
+								<b></b>
+								暂未获取到分享链接
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gh_clearfix gh_mt25">
+					<div class="share_myinvite">
+						<div class="gh_f14"><b>我的邀请</b></div>
+						<ul class="gh_tcenter gh_f12 share_myinvite_title">
+							<li class="gh_col_2">排序 </li>
+							<li class="gh_col_4">我邀请的人</li>
+							<li class="gh_col_2">姓名 </li>
+							<li class="gh_col_4"> 邀请时间</li>
+						</ul>
+						<div class="gh_tcenter gh_mt120 gh_none">
+							<b class="">登录后可查看奖励明细〜</b><br>
+							<a href="javascript:;" class="share_botton_gologin  toLogin">登录</a>
+						</div>
+						<div class="share_list_invite none" id="myInvite" style="height: 309px;">
+							
+						</div>
+						
+					</div>
+					<div class="share_invitechart gh_ml20">
+						<div class="f_14"><b>邀请排行榜</b></div>
+						<ul class="gh_tcenter gh_f12 share_myinvite_title">
+							<li class="gh_col_2">排序 </li>
+							<li class="gh_col_4">用户 </li>
+							<li class="gh_col_2">姓名 </li>
+							<li class="gh_col_4">邀请人数</li>
+						</ul>
+						<div class="share_list_invite_chart" id="topInvite">
+							
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			<div class="scroll-box"><span></span><span></span><span></span><span></span></div>
+		</div>
+		<!--代金券Modal-->
+		<div class="apply-c-div modal fade in" tabindex="-1" role="dialog" data-backdrop="static" style="display: none;">
+			<div class="modal-dialog safety-dialog">
+				<div class="popup-box safety_popup">
+					<div id="loginClose" class="popup-close" data-dismiss="modal"><img src="static/images/close.png" alt="关闭_国槐科技"></div>
+					<!--<img src="static/images/safety_yyz.png"/>-->
+				</div>
+			</div>
+		</div>
+		
+		<script id="invite-template" class="mustache-template" type="text/template">
+			{{#invites}}
+				<ul class="gh_tcenter gh_f12 share_myinvite_list">
+					<li class="gh_col_2">{{idx}}</li>
+					<li class="gh_col_4">{{phone}}</li>
+					<li class="gh_col_2">{{realName}}</li>
+					{{#top}}<li class="gh_col_4">{{recommendCount}}</li>{{/top}}
+					{{^top}}<li class="gh_col_4">{{date}}</li>{{/top}}
+				</ul>
+			{{/invites}}
+			{{^invites}}
+				<div class="gh_tcenter gh_mt35">暂无数据</div>
+			{{/invites}}
+		</script>
+		
+		<div template-href='footer'></div>
+		<div template-href='user-center'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>

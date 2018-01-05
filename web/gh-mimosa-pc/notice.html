@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>平台公告-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="平台公告，国槐科技">
+		<meta name="description" content="国槐科技平台最新动态公告">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/other.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<!--<script src="static/js/public/bootstrap.min.js"></script>-->
+		<script src="static/js/public/mustache.min.js"></script>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/public/jquery.page.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/GHextend.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/notice.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="index" class="gh_bgbody">
+		<div template-href='header' data-navname="notice" id="header-box"></div>
+		<div class="gh_warp">
+			<div class="notice_box">
+				<!--公告列表页面-->
+				<div class="notice_content" id="notice-list">
+					<ul class="notice_ul" id="notice">
+					
+					</ul>
+					<div class="public-content-main gh_noDataTips none" id="notice-noRecord" style="display: none;">
+						<img src="static/images/no_news.png" alt="国槐科技">
+						<p class="gh_norecord">暂无公告</p>
+					</div>
+					<div class="gh_tcdPageCode"></div>
+				</div>
+			</div>
+		</div>
+		<!--内容弹窗-->
+		<div class="gh_modal" id="content-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+			<div class="gh_modal_dialog gh_modal_lg">
+				<div class="gh_modal_content">
+					<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+					<div class="gh_modal_header">
+						<p class="gh_modal_title" id="title"></p>
+					</div>
+					<div class="gh_modal_body" id="content">
+
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script id="notice-template" class="mustache-template" type="text/template">
+			{{#rows}}
+			<li>
+				<div class="message_title" data-title="{{title}}" data-linkUrl="{{linkUrl}}" data-linkHtml="{{linkHtml}}">
+					<a href="javascript:;" target="_blank">
+						<p class="title">{{title}}
+							{{#subscript}}<i class="notice_{{subscript}}">{{subscript}}</i>{{/subscript}}
+						</p>
+						<p class="date">{{releaseTime}}</p>
+					</a>
+				</div>
+			</li>
+			{{/rows}}
+		</script>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="gh_modal gh_fade" id="modal_risktesting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_lg modal_risktesting">
+		<div class="gh_modal_content" id="">
+			<div class="gh_modal_header">
+				<div class="gh_modal_close  gh_icons" data-dismiss="modal"></div>
+				<p class="gh_f18 gh_c0">风险评估</p>
+			</div>
+			<div class="gh_modal_body">
+			<p class="gh_f14 gh_c8 gh_mt10">根据风险评估结果选择您适合的投资项目</p>
+			<p class="gh_f14 gh_c6 gh_mt20 gh_mb20">我们将对您进行风险承受能力评估。根据评估结果,您的风险承受能力将属于以下五种类型中的一种:保守型、稳健型、平衡型、积极型、进取型。为了给您提供更好的资产选择,请您认真作答,感谢您的配合。</p>
+			<div id="risk-appraisal-lists">
+			</div>
+			<div class="gh_tipstxt gh_tcenter" id="risk_errorMessage">&nbsp;</div>
+			<div class="gh_tcenter">
+				<div class="gh_btn gh_btn_md gh_btn_blue" id="submitAnswer">提交问卷</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gh_modal" id="modal_risktesting_result" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+	<div class="gh_modal_dialog gh_modal_lg modal_risktesting_result">
+		<div class="gh_modal_content" id="">
+			<div class="gh_modal_header">
+				<div class="gh_modal_close  gh_icons"  data-dismiss="modal"></div>
+				<p class="gh_f18 gh_c0">您的风险评估结果</p>
+			</div>
+			<div class="gh_modal_body">
+			<div class="validata_con active">
+					<div class="risktesting_result pt40">
+						<div class="riskLevelImg gh_icons"></div>
+						<p>个人用户风险承受能力测评</p>
+						<h2>保守型</h2>
+					</div>
+					<div class="gh_tcenter gh_mt40">根据测评结果，您对风险非常敏感，十分关注本金安全，可能会放弃因承受风险而带来的收益，投资时通常不会留意产品起投金额。。</div>
+					<div class="gh_row gh_mt55 gh_pb40">
+						<div class="gh_col_6">
+							<div class="pc_botton_def gh_btn gh_btn_md gh_btn_orange" id="reRiskTest">重新测评</div>
+						</div>
+						<div class="gh_col_6">
+							<div class="pc_modal_botton gh_btn gh_btn_md gh_btn_orange" id="riskComplete">完成</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script id="risk-appraisal-template" class="mustache-template" type="text/template">
+	{{#problems}}
+	<div class="risk_appraisal_list">
+		<p class="gh_f14 gh_c0 gh_mt28 gh_mb10 gh_fw700">{{idx}}.{{content}}</p>
+		<div class="f_14">
+			{{#answers}}
+			<p><label for="{{aid}}"><input type="radio" id="{{aid}}" name="{{id}}" value="{{aid}}" />&nbsp;&nbsp;{{sn}}.&nbsp;{{text}}</label></p>
+			{{/answers}}
+		</div>
+	</div>
+	{{/problems}}		
+</script>

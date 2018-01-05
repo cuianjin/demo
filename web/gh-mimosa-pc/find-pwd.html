@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="modern">
+	<head>
+		<title>找回密码-国槐科技</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/usermgmt.css" rel="stylesheet">
+		<link href="static/css/theme.css" rel="stylesheet">
+		<!--[if gte IE 9]>
+        <script src="static/js/public/jquery-2.1.3.min.js"></script>
+    <![endif]-->
+		<!--[if lte IE 8]>
+        <script src="static/js/public/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<![if !IE]>
+		<script src="static/js/public/jquery-2.1.3.min.js"></script>
+		<![endif]>
+		<script src="static/js/public/require.min.js"></script>
+		<script src="static/js/component.js"></script>
+		<script src="static/js/loadTemplates.js"></script>
+		<script src="static/js/find-pwd.js"></script>
+	</head>
+	<!--[if lte IE 7]>
+		<body>
+			<div id="lowie" class="lowie"></div>
+			<script src="static/js/common-template/letIE.js"></script>
+		</body>
+    <![endif]-->
+	<body id="find-pwd" class="gh_bgbody">
+		<!-- 以下代码防止谷歌等浏览器自动填充 {-->
+		<div style="width: 0;overflow: hidden;height: 0;">
+			<input style="width: 0;opacity: 0;" type="text" name="name" />
+			<input style="width: 0;opacity: 0;" type="password" name="password" autocomplete="new-password" />
+		</div>
+		<!--}-->
+		<div template-href='header' data-navname="" id="header-box"></div>
+		<!--middle-->
+		<div id="findPassword" class="">
+			<div class="findpwd_container">
+				<div class="findpwd_steps_box">
+					<div class="one on steps_one">
+						<span class="findpwd_steps">1</span>
+						<span class="step_tips">输入账户名</span>
+					</div>
+					<div class="findpwd_img_one">
+						<img src="static/images/arrow-right1.png" class="gh_w114">
+					</div>
+					<div class="two steps_two">
+						<div class="findpwd_steps">2</div>
+						<span class="step_tips">重置密码</span>
+					</div>
+					<div class="findpwd_img_two">
+						<img src="static/images/arrow-right1.png" class="gh_w147">
+					</div>
+					<div class="three steps_three">
+						<div class="findpwd_steps">3</div>
+						<span class="step_tips">密码重置成功</span>
+					</div>
+				</div>
+				<div class="findpwd_steps_content">
+					<div class="steps_content on steps_one" id="phoneCode_div">
+						<div class="gh_form_group gh_pl45" id="mobilePhone_div">
+							<label>手机号</label>
+							<input id="userPhoneNo" type="tel" placeholder="请输入手机号" valid='{"required":true,"tipsbox":"#find_pwd_tips","msg":"提示：手机号码","mobilePhone":true}' triggerId="#findpwd_step1" maxlength="11" value="" />	
+						</div>
+						<div class="gh_form_group gh_verifyCode_group gh_pl45" id="mobileVericode_div">
+							<label>验证码</label>
+							<input id="verifyCodeNo" type="text" placeholder="请输入手机验证码" valid='{"required":true,"tipsbox":"#find_pwd_tips","msg":"提示：验证码","positiveInteger":true,"finalLength":6}' triggerId="#findpwd_step1" maxlength="6" />
+							<span id="pwd_vericode_btn" class="gh_pwd_vericode_btn">获取验证码</span>
+						</div>
+						<div class="gh_mt5 gh_tleft gh_pl45">
+							<span class="gh_btn gh_btn_md gh_btn_blue" id="findpwd_step1">下一步</span>
+						</div>
+					</div>
+					<div class="steps_content steps_two" id="newPwd_box">
+						<div class="gh_form_group gh_pl45">
+							<label>新密码</label>
+							<input id="password1" type="password" placeholder="新密码，6-16位数字与字母组合" valid='{"required":true,"tipsbox":"#find_pwd_tips","msg":"提示：新密码", "passWord":true}' triggerId="#findpwd_step2" maxlength="16" />
+						</div>
+						<div class="gh_form_group gh_pl45">
+							<label>确认密码</label>
+							<input id="password2" type="password" placeholder="确认密码，6-16位数字与字母组合" valid='{"required":true,"tipsbox":"#find_pwd_tips","msg":"提示：确认密码", "passWord":true,"equals":"password1","equalsMsg":"新密码"}' triggerId="#findpwd_step2" maxlength="16" />
+						</div>
+						<div class="gh_mt5 gh_tleft gh_pl45">
+							<span class="gh_btn gh_btn_md gh_btn_blue" id="findpwd_step2">确定</span>
+						</div>
+					</div>
+					<div class="steps_content steps_three">
+						<div class="success_result_img gh_icons"></div>
+						<div class="gh_f20 gh_c2 gh_mt30">恭喜您，密码重置成功，请重新登录</div>
+						<div class="gh_mt5 gh_tcenter">
+							<span class="gh_btn gh_btn_md gh_btn_blue" id="find_pwd_succes" >去登录</span>
+						</div>
+					</div>
+					<div class="gh_col_11 find_pwd_tips" id="find_pwd_tips"></div>
+				</div>
+					
+							
+							
+			
+					<!--<div id="step2" class="gh_findpwd_cont gh_none">
+						
+					</div>
+					<div id="step3" class="gh_findpwd_cont gh_none">
+						
+						<div class="gh_mt60">
+							<div class="row tc">
+								<div class="success-result-img"><img src="static/images/icon_success.png" alt="成功_国槐科技" /></div>
+								<div class="success-tips">恭喜您，密码重置成功，请重新登录</div>
+							</div>
+							
+						</div>
+					</div>-->
+			</div>
+		</div>
+		<div template-href='footer'></div>
+		<div template-href='custom-service'></div>
+	</body>
+</html>
